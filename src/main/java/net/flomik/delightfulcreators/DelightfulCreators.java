@@ -1,8 +1,13 @@
 package net.flomik.delightfulcreators;
 
 import com.mojang.logging.LogUtils;
+import net.flomik.delightfulcreators.block.ModBlocks;
+import net.flomik.delightfulcreators.fluid.ModFluids;
+import net.flomik.delightfulcreators.fluid.ModFluidsTypes;
 import net.flomik.delightfulcreators.item.ModCreativeModTabs;
 import net.flomik.delightfulcreators.item.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.CreativeModeTabRegistry;
@@ -29,6 +34,10 @@ public class DelightfulCreators {
         ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
+        ModFluidsTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -59,7 +68,8 @@ public class DelightfulCreators {
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_TOMATO_SAUCE.get(), RenderType.solid());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_TOMATO_SAUCE.get(), RenderType.solid());
         }
     }
 }

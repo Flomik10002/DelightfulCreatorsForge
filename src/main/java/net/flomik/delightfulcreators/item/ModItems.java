@@ -1,6 +1,8 @@
 package net.flomik.delightfulcreators.item;
 
 import net.flomik.delightfulcreators.DelightfulCreators;
+import net.flomik.delightfulcreators.fluid.ModFluids;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -101,6 +103,64 @@ public class ModItems {
 
     public static final RegistryObject<Item> PUMPKIN_PIE_SLICE = ITEMS.register("pumpkin_pie_slice",
             () -> new Item(new Item.Properties().food(ModFoods.INCOMPLETE)));
+
+    public static final RegistryObject<Item> TOMATO_SAUCE_BUCKET = ITEMS.register("tomato_sauce_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_TOMATO_SAUCE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> HOT_COCOA_BUCKET = ITEMS.register("hot_cocoa_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_HOT_COCOA, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> MELON_JUICE_BUCKET = ITEMS.register("melon_juice_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_MELON_JUICE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> APPLE_CIDER_BUCKET = ITEMS.register("apple_cider_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_APPLE_CIDER, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> BEETROOT_SOUP_BUCKET = ITEMS.register("beetroot_soup_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_BEETROOT_SOUP, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> CHICKEN_SOUP_BUCKET = ITEMS.register("chicken_soup_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_CHICKEN_SOUP, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> NOODLE_SOUP_BUCKET = ITEMS.register("noodle_soup_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_NOODLE_SOUP, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> PUMPKIN_SOUP_BUCKET = ITEMS.register("pumpkin_soup_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_PUMPKIN_SOUP, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> VEGETABLE_SOUP_BUCKET = ITEMS.register("vegetable_soup_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_VEGETABLE_SOUP, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> FISH_STEW_BUCKET = ITEMS.register("fish_stew_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_FISH_STEW, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> BEEF_STEW_BUCKET = ITEMS.register("beef_stew_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_BEEF_STEW, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> RABBIT_STEW_BUCKET = ITEMS.register("rabbit_stew_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_RABBIT_STEW, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> MUSHROOM_STEW_BUCKET = ITEMS.register("mushroom_stew_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_MUSHROOM_STEW, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> GLOW_BERRY_CUSTARD_BUCKET = ITEMS.register("glow_berry_custard_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_GLOW_BERRY_CUSTARD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> RATATOUILLE_BUCKET = ITEMS.register("ratatouille_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_RATATOUILLE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> DOG_FOOD_BUCKET = ITEMS.register("dog_food_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_DOG_FOOD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> BAKED_COD_STEW_BUCKET = ITEMS.register("baked_cod_stew_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_BAKED_COD_STEW, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> BONE_BROTH_BUCKET = ITEMS.register("bone_broth_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_BONE_BROTH, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> COOKED_RICE_BUCKET = ITEMS.register("cooked_rice_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_COOKED_RICE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
