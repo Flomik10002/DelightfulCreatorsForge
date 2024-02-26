@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+    "item": "farmersdelight:pumpkin_slice"
+    },
+    {
+      "tag": "forge:salad_ingredients"
+    },
+    {
+      "tag": "forge:raw_pork"
+    },
+    {
+      "amount": 250,
+      "fluidTag": "forge:milk"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "delightfulcreators:pumpkin_soup",
+      "amount": 333
+    }
+  ]
+}

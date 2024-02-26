@@ -1,0 +1,49 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "forge:bale"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "farmersdelight:horse_feed"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_horse_feed"
+        },
+        {
+          "item": "minecraft:apple"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_horse_feed"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_horse_feed"
+        },
+        {
+          "item": "minecraft:golden_carrot"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_horse_feed"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "delightfulcreators:incomplete_horse_feed"
+  }
+}

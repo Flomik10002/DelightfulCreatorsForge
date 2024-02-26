@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "farmersdelight:rice"
+    }
+  ],
+  "results": [
+    {
+      "fluid" : "delightfulcreators:cooked_rice",
+      "amount": 333
+    }
+  ]
+}

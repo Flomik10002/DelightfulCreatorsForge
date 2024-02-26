@@ -1,0 +1,18 @@
+{
+  "replace": "true",
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "fluid": "delightfulcreators:pumpkin_soup",
+      "amount": 333
+    }
+  ],
+  "results": [
+    {
+      "item": "farmersdelight:pumpkin_soup"
+    }
+  ]
+}

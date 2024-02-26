@@ -1,0 +1,65 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "farmersdelight:steak_and_potatoes"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_steak_and_potatoes"
+        },
+        {
+          "item": "minecraft:cooked_beef"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_steak_and_potatoes"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_steak_and_potatoes"
+        },
+        {
+          "item": "minecraft:baked_potato"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_steak_and_potatoes"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_steak_and_potatoes"
+        },
+        {
+          "item": "farmersdelight:onion"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_steak_and_potatoes"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "delightfulcreators:incomplete_steak_and_potatoes"
+  }
+}

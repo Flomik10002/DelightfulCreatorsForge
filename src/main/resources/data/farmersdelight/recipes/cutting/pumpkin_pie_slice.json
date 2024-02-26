@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:pumpkin_pie"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "delightfulcreators:pumpkin_pie_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "replace": "true",
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "fluid": "delightfulcreators:beef_stew",
+      "amount": 333
+    }
+  ],
+  "results": [
+    {
+      "item": "farmersdelight:beef_stew"
+    }
+  ]
+}

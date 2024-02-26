@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "amount": 250,
+      "fluid": "delightfulcreators:cooked_rice"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "tag": "farmersdelight:wolf_prey"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "delightfulcreators:dog_food",
+      "amount": 333
+    }
+  ]
+}

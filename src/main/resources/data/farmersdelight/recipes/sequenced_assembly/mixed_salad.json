@@ -1,0 +1,65 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "farmersdelight:mixed_salad"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_mixed_salad"
+        },
+        {
+          "tag": "forge:salad_ingredients/cabbage"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_mixed_salad"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_mixed_salad"
+        },
+        {
+          "item": "minecraft:beetroot"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_mixed_salad"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_mixed_salad"
+        },
+        {
+          "item": "farmersdelight:tomato"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_mixed_salad"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "delightfulcreators:incomplete_mixed_salad"
+  }
+}

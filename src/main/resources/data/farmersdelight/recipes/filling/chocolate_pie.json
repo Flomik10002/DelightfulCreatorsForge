@@ -1,0 +1,18 @@
+{
+  "replace": "true",
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "farmersdelight:pie_crust"
+    },
+    {
+      "fluid": "create:chocolate",
+      "amount": 40500
+    }
+  ],
+  "results": [
+    {
+      "item": "farmersdelight:chocolate_pie"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato"
+    },
+    {
+      "item": "farmersdelight:onion"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "tag": "forge:vegetables"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "delightfulcreators:ratatouille",
+      "amount": 333
+    }
+  ]
+}

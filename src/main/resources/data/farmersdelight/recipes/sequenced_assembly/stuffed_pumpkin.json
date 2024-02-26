@@ -1,0 +1,113 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:pumpkin"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "farmersdelight:stuffed_pumpkin_block"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "item": "farmersdelight:rice"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "item": "minecraft:potato"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "item": "minecraft:brown_mushroom"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "item": "farmersdelight:onion"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "tag": "forge:berries"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        },
+        {
+          "tag": "forge:vegetables"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "delightfulcreators:incomplete_stuffed_pumpkin"
+  }
+}

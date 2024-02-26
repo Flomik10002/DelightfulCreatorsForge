@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:raw_chicken"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "tag": "forge:salad_ingredients"
+    },
+    {
+      "tag": "forge:vegetables"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "delightfulcreators:chicken_soup",
+      "amount": 333
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato"
+    }
+  ],
+  "results": [
+    {
+      "fluid" : "delightfulcreators:tomato_sauce",
+      "amount": 333
+    }
+  ]
+}

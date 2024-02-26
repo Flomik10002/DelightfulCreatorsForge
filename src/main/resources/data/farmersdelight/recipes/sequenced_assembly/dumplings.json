@@ -1,0 +1,66 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "forge:dough"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "farmersdelight:dumplings",
+      "count": 2
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_dumplings"
+        },
+        {
+          "item": "farmersdelight:onion"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_dumplings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_dumplings"
+        },
+        {
+          "tag": "forge:dumplings_ingredients"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_dumplings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_dumplings"
+        },
+        {
+          "tag": "forge:salad_ingredients"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_dumplings"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "delightfulcreators:incomplete_dumplings"
+  }
+}

@@ -48,6 +48,24 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.INCOMPLETE_STEAK_AND_POTATOES.get());
                         output.accept(ModItems.PUMPKIN_PIE_SLICE.get());
                         output.accept(ModItems.TOMATO_SAUCE_BUCKET.get());
+                        output.accept(ModItems.HOT_COCOA_BUCKET.get());
+                        output.accept(ModItems.MELON_JUICE_BUCKET.get());
+                        output.accept(ModItems.APPLE_CIDER_BUCKET.get());
+                        output.accept(ModItems.BEETROOT_SOUP_BUCKET.get());
+                        output.accept(ModItems.CHICKEN_SOUP_BUCKET.get());
+                        output.accept(ModItems.NOODLE_SOUP_BUCKET.get());
+                        output.accept(ModItems.PUMPKIN_SOUP_BUCKET.get());
+                        output.accept(ModItems.VEGETABLE_SOUP_BUCKET.get());
+                        output.accept(ModItems.FISH_STEW_BUCKET.get());
+                        output.accept(ModItems.BEEF_STEW_BUCKET.get());
+                        output.accept(ModItems.RABBIT_STEW_BUCKET.get());
+                        output.accept(ModItems.MUSHROOM_STEW_BUCKET.get());
+                        output.accept(ModItems.GLOW_BERRY_CUSTARD_BUCKET.get());
+                        output.accept(ModItems.RATATOUILLE_BUCKET.get());
+                        output.accept(ModItems.DOG_FOOD_BUCKET.get());
+                        output.accept(ModItems.BAKED_COD_STEW_BUCKET.get());
+                        output.accept(ModItems.BONE_BROTH_BUCKET.get());
+                        output.accept(ModItems.COOKED_RICE_BUCKET.get());
 
                     })
                     .build());

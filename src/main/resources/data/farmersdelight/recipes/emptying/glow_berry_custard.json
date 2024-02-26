@@ -1,0 +1,17 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "farmersdelight:glow_berry_custard"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "amount": 333,
+      "fluid": "delightfulcreators:glow_berry_custard"
+    }
+  ]
+}

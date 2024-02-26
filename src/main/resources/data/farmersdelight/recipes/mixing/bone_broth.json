@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bone"
+    },
+    {
+      "tag": "forge:bone_broth_ingredients"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "delightfulcreators:bone_broth",
+      "amount": 333
+    }
+  ]
+}

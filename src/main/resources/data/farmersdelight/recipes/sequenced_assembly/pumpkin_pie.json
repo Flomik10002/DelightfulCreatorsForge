@@ -1,0 +1,65 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "farmersdelight:pie_crust"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "item": "minecraft:pumpkin_pie"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_pumpkin_pie"
+        },
+        {
+          "item": "farmersdelight:pumpkin_slice"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_pumpkin_pie"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_pumpkin_pie"
+        },
+        {
+          "item": "farmersdelight:pumpkin_slice"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_pumpkin_pie"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_pumpkin_pie"
+        },
+        {
+          "item": "minecraft:sugar"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_pumpkin_pie"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "delightfulcreators:incomplete_pumpkin_pie"
+  }
+}

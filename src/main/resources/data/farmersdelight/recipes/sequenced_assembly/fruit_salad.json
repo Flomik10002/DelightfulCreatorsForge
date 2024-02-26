@@ -1,0 +1,81 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "farmersdelight:fruit_salad"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_fruit_salad"
+        },
+        {
+          "item": "minecraft:melon_slice"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_fruit_salad"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_fruit_salad"
+        },
+        {
+          "item": "minecraft:apple"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_fruit_salad"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_fruit_salad"
+        },
+        {
+          "tag": "forge:berries"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_fruit_salad"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_fruit_salad"
+        },
+        {
+          "item": "farmersdelight:pumpkin_slice"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_fruit_salad"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "delightfulcreators:incomplete_fruit_salad"
+  }
+}

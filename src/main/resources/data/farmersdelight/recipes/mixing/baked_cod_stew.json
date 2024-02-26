@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "tag": "forge:raw_fishes/cod"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "delightfulcreators:baked_cod_stew",
+      "amount": 333
+    }
+  ]
+}
