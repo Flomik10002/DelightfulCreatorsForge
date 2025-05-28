@@ -9,7 +9,7 @@
     },
     {
       "amount": 250,
-      "fluidTag": "c:honey"
+      "fluidTag": "forge:honey"
     }
   ],
   "results": [

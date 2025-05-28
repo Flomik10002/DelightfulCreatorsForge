@@ -104,6 +104,9 @@ public class ModItems {
     public static final RegistryObject<Item> PUMPKIN_PIE_SLICE = ITEMS.register("pumpkin_pie_slice",
             () -> new Item(new Item.Properties().food(ModFoods.INCOMPLETE)));
 
+    public static final RegistryObject<Item> INCOMPLETE_STUFFED_POTATO = ITEMS.register("incomplete_stuffed_potato",
+            () -> new Item(new Item.Properties().food(ModFoods.INCOMPLETE)));
+
     public static final RegistryObject<Item> TOMATO_SAUCE_BUCKET = ITEMS.register("tomato_sauce_bucket",
             () -> new BucketItem(ModFluids.SOURCE_TOMATO_SAUCE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 

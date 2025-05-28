@@ -1,0 +1,50 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:baked_potato"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "farmersdelight:stuffed_potato"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_potato"
+        },
+        {
+          "tag": "forge:cooked_beef_or_vegan"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_potato"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_potato"
+        },
+        {
+          "amount": 333,
+          "fluidTag": "forge:milk"
+        }
+      ],
+      "results": [
+        {
+          "item": "delightfulcreators:incomplete_stuffed_potato"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "delightfulcreators:incomplete_stuffed_potato"
+  }
+}

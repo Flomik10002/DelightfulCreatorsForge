@@ -33,7 +33,7 @@
           "item": "delightfulcreators:incomplete_squid_ink_pasta"
         },
         {
-          "item": "farmersdelight:tomato"
+          "tag": "forge:crops/tomato"
         }
       ],
       "results": [

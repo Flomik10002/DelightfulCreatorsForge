@@ -65,7 +65,7 @@
           "item": "delightfulcreators:incomplete_roast_chicken"
         },
         {
-          "item": "farmersdelight:onion"
+          "tag": "forge:crops/onion"
         }
       ],
       "results": [

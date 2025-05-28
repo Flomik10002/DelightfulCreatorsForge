@@ -65,7 +65,7 @@
           "item": "delightfulcreators:incomplete_roasted_mutton_chops"
         },
         {
-          "item": "farmersdelight:tomato"
+          "tag": "forge:crops/tomato"
         }
       ],
       "results": [

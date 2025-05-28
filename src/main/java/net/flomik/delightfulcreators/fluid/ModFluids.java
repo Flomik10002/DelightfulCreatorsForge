@@ -15,79 +15,79 @@ public class ModFluids {
     public static final DeferredRegister<Fluid> FLUIDS =
             DeferredRegister.create(ForgeRegistries.FLUIDS, DelightfulCreators.MOD_ID);
 
-    public static final RegistryObject<FlowingFluid> SOURCE_TOMATO_SAUCE = FLUIDS.register("tomato_sauce_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_TOMATO_SAUCE = FLUIDS.register("tomato_sauce",
             () -> new ForgeFlowingFluid.Source(ModFluids.TOMATO_SAUCE_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_TOMATO_SAUCE = FLUIDS.register("flowing_tomato_sauce",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.TOMATO_SAUCE_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_HOT_COCOA = FLUIDS.register("hot_cocoa_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_HOT_COCOA = FLUIDS.register("hot_cocoa",
             () -> new ForgeFlowingFluid.Source(ModFluids.HOT_COCOA_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_HOT_COCOA = FLUIDS.register("flowing_hot_cocoa",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.HOT_COCOA_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_MELON_JUICE = FLUIDS.register("melon_juice_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_MELON_JUICE = FLUIDS.register("melon_juice",
             () -> new ForgeFlowingFluid.Source(ModFluids.MELON_JUICE_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_MELON_JUICE = FLUIDS.register("flowing_melon_juice",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.MELON_JUICE_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_APPLE_CIDER = FLUIDS.register("apple_cider_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_APPLE_CIDER = FLUIDS.register("apple_cider",
             () -> new ForgeFlowingFluid.Source(ModFluids.APPLE_CIDER_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_APPLE_CIDER = FLUIDS.register("flowing_apple_cider",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.APPLE_CIDER_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_BEETROOT_SOUP = FLUIDS.register("beetroot_soup_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_BEETROOT_SOUP = FLUIDS.register("beetroot_soup",
             () -> new ForgeFlowingFluid.Source(ModFluids.BEETROOT_SOUP_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_BEETROOT_SOUP = FLUIDS.register("flowing_beetroot_soup",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.BEETROOT_SOUP_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_CHICKEN_SOUP = FLUIDS.register("chicken_soup_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_CHICKEN_SOUP = FLUIDS.register("chicken_soup",
             () -> new ForgeFlowingFluid.Source(ModFluids.CHICKEN_SOUP_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_CHICKEN_SOUP = FLUIDS.register("flowing_chicken_soup",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.CHICKEN_SOUP_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_NOODLE_SOUP = FLUIDS.register("noodle_soup_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_NOODLE_SOUP = FLUIDS.register("noodle_soup",
             () -> new ForgeFlowingFluid.Source(ModFluids.NOODLE_SOUP_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_NOODLE_SOUP = FLUIDS.register("flowing_noodle_soup",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.NOODLE_SOUP_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_PUMPKIN_SOUP = FLUIDS.register("pumpkin_soup_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_PUMPKIN_SOUP = FLUIDS.register("pumpkin_soup",
             () -> new ForgeFlowingFluid.Source(ModFluids.PUMPKIN_SOUP_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_PUMPKIN_SOUP = FLUIDS.register("flowing_pumpkin_soup",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.PUMPKIN_SOUP_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_VEGETABLE_SOUP = FLUIDS.register("vegetable_soup_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_VEGETABLE_SOUP = FLUIDS.register("vegetable_soup",
             () -> new ForgeFlowingFluid.Source(ModFluids.VEGETABLE_SOUP_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_VEGETABLE_SOUP = FLUIDS.register("flowing_vegetable_soup",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.VEGETABLE_SOUP_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_FISH_STEW = FLUIDS.register("fish_stew_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_FISH_STEW = FLUIDS.register("fish_stew",
             () -> new ForgeFlowingFluid.Source(ModFluids.FISH_STEW_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_FISH_STEW = FLUIDS.register("flowing_fish_stew",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.FISH_STEW_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_BEEF_STEW = FLUIDS.register("beef_stew_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_BEEF_STEW = FLUIDS.register("beef_stew",
             () -> new ForgeFlowingFluid.Source(ModFluids.BEEF_STEW_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_BEEF_STEW = FLUIDS.register("flowing_beef_stew",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.BEEF_STEW_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_RABBIT_STEW = FLUIDS.register("rabbit_stew_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_RABBIT_STEW = FLUIDS.register("rabbit_stew",
             () -> new ForgeFlowingFluid.Source(ModFluids.RABBIT_STEW_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_RABBIT_STEW = FLUIDS.register("flowing_rabbit_stew",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.RABBIT_STEW_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_MUSHROOM_STEW = FLUIDS.register("mushroom_stew_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_MUSHROOM_STEW = FLUIDS.register("mushroom_stew",
             () -> new ForgeFlowingFluid.Source(ModFluids.MUSHROOM_STEW_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_MUSHROOM_STEW = FLUIDS.register("flowing_mushroom_stew",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.MUSHROOM_STEW_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_GLOW_BERRY_CUSTARD = FLUIDS.register("glow_berry_custard_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_GLOW_BERRY_CUSTARD = FLUIDS.register("glow_berry_custard",
             () -> new ForgeFlowingFluid.Source(ModFluids.GLOW_BERRY_CUSTARD_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_GLOW_BERRY_CUSTARD = FLUIDS.register("flowing_glow_berry_custard",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.GLOW_BERRY_CUSTARD_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_RATATOUILLE = FLUIDS.register("ratatouille_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_RATATOUILLE = FLUIDS.register("ratatouille",
             () -> new ForgeFlowingFluid.Source(ModFluids.RATATOUILLE_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_RATATOUILLE = FLUIDS.register("flowing_ratatouille",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.RATATOUILLE_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_DOG_FOOD = FLUIDS.register("dog_food_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_DOG_FOOD = FLUIDS.register("dog_food",
             () -> new ForgeFlowingFluid.Source(ModFluids.DOG_FOOD_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_DOG_FOOD = FLUIDS.register("flowing_dog_food",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.DOG_FOOD_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_BAKED_COD_STEW = FLUIDS.register("baked_cod_stew_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_BAKED_COD_STEW = FLUIDS.register("baked_cod_stew",
             () -> new ForgeFlowingFluid.Source(ModFluids.BAKED_COD_STEW_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_BAKED_COD_STEW = FLUIDS.register("flowing_baked_cod_stew",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.BAKED_COD_STEW_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_BONE_BROTH = FLUIDS.register("bone_broth_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_BONE_BROTH = FLUIDS.register("bone_broth",
             () -> new ForgeFlowingFluid.Source(ModFluids.BONE_BROTH_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_BONE_BROTH = FLUIDS.register("flowing_bone_broth",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.BONE_BROTH_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> SOURCE_COOKED_RICE = FLUIDS.register("cooked_rice_fluid",
+    public static final RegistryObject<FlowingFluid> SOURCE_COOKED_RICE = FLUIDS.register("cooked_rice",
             () -> new ForgeFlowingFluid.Source(ModFluids.COOKED_RICE_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> FLOWING_COOKED_RICE = FLUIDS.register("flowing_cooked_rice",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.COOKED_RICE_FLUID_PROPERTIES));

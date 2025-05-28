@@ -18,7 +18,7 @@
           "item": "delightfulcreators:incomplete_dumplings"
         },
         {
-          "item": "farmersdelight:onion"
+          "tag": "forge:crops/onion"
         }
       ],
       "results": [
@@ -34,7 +34,7 @@
           "item": "delightfulcreators:incomplete_dumplings"
         },
         {
-          "tag": "forge:dumplings_ingredients"
+          "tag": "c:dumplings_ingredients"
         }
       ],
       "results": [

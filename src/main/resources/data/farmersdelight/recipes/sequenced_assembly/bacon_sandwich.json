@@ -1,7 +1,7 @@
 {
   "type": "create:sequenced_assembly",
   "ingredient": {
-    "tag": "forge:bread"
+    "tag": "forge:bread_slices"
   },
   "loops": 1,
   "results": [

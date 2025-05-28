@@ -49,7 +49,7 @@
           "item": "delightfulcreators:incomplete_mixed_salad"
         },
         {
-          "item": "farmersdelight:tomato"
+          "tag": "forge:crops/tomato"
         }
       ],
       "results": [

@@ -6,13 +6,13 @@
       "item": "minecraft:bone"
     },
     {
-      "tag": "forge:bone_broth_ingredients"
+      "tag": "c:bone_broth_ingredients"
     }
   ],
   "results": [
     {
-      "fluid": "delightfulcreators:bone_broth",
-      "amount": 333
+      "amount": 333,
+      "fluid": "delightfulcreators:bone_broth"
     }
   ]
 }

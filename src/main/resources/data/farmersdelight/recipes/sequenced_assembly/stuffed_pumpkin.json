@@ -65,7 +65,7 @@
           "item": "delightfulcreators:incomplete_stuffed_pumpkin"
         },
         {
-          "item": "farmersdelight:onion"
+          "tag": "forge:crops/onion"
         }
       ],
       "results": [

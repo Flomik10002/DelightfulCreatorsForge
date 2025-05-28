@@ -49,7 +49,7 @@
           "item": "delightfulcreators:incomplete_fried_rice"
         },
         {
-          "item": "farmersdelight:onion"
+          "tag": "forge:crops/onion"
         }
       ],
       "results": [

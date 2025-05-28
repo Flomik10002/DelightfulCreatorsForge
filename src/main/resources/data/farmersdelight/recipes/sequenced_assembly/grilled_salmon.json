@@ -65,7 +65,7 @@
           "item": "delightfulcreators:incomplete_grilled_salmon"
         },
         {
-          "item": "farmersdelight:onion"
+          "tag": "forge:crops/onion"
         }
       ],
       "results": [

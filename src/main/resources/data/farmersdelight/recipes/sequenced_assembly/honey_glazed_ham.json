@@ -49,7 +49,7 @@
           "item": "delightfulcreators:incomplete_honey_glazed_ham"
         },
         {
-          "fluidTag": "c:honey",
+          "fluidTag": "forge:honey",
           "amount": 250
         }
       ],

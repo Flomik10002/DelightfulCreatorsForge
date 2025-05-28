@@ -65,7 +65,7 @@
           "item": "delightfulcreators:incomplete_shepherds_pie"
         },
         {
-          "item": "farmersdelight:onion"
+          "tag": "forge:crops/onion"
         }
       ],
       "results": [

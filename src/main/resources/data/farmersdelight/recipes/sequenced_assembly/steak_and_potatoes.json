@@ -49,7 +49,7 @@
           "item": "delightfulcreators:incomplete_steak_and_potatoes"
         },
         {
-          "item": "farmersdelight:onion"
+          "tag": "forge:crops/onion"
         }
       ],
       "results": [
