@@ -6,22 +6,24 @@
 
 [![](https://cf.way2muchnoise.eu/1275340.svg?badge_style=for_the_badge)][CURSEFORGE]
 
-<h1>About: </h1>
-<h4>Delightful Creators is an addon for Farmer's Delight and Create which adds new recipes using Create. Currently adds new fluids and recipes, which are useful on modpacks.<h4/>
+## About:
+Delightful Creators is an addon for Farmer's Delight and Create which adds new recipes using Create. Currently adds new fluids and recipes, which are useful on modpacks.
 
- 
+## Current Content: 
+• New incomplete food for Sequenced Assembly.<br>
+• New fluids for soups, stews and sauces etc.<br>
+• Possibility to make fluids by mixing ingredients in a mixer.<br>
+• Possibility to fill the bowl with stews or soups.<br>
+• Possibility to cut pumpkin pie.<br>
+• Recipes for honey and sweet berry cookies.<br>
+• Recipe for chocolate pie.
 
-<h1>Current Content: </h1>
-<h4>• New incomplete food for Sequenced Assembly.</h4>
-<h4>• New fluids for soups, stews and sauces etc.</h4>
-<h4>• Possibility to make fluids by mixing ingredients in a mixer.</h4>
-<h4>• Possibility to fill the bowl with stews or soups.</h4>
-<h4>• Possibility to cut pumpkin pie.</h4>
-<h4>• Recipes for honey and sweet berry cookies.</h4>
-<h4>• Recipe for chocolate pie.</h4>
+## Quick Start
+1. Install Forge Loader (MC 1.XX).
+2. Drop Farmer's Delight and Create JARs into `mods/`.
+3. Drop JAR into `mods/`.
+4. Launch and explore new farming options.
 
-
-<h1>Localization: <h1/>
-<h4>• English (en_us) - Flomik<h4/>
-<h4>• Russian (ru_ru) - Flomik<h4/>
-
+## Localization:
+• English (en_us) - Flomik<br>
+• Russian (ru_ru) - Flomik
