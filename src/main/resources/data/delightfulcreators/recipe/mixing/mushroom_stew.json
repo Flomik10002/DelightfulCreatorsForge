@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_mushroom"
+    },
+    {
+      "item": "minecraft:red_mushroom"
+    }
+  ],
+  "results": [
+    {
+            "amount": 333,
+      "id": "delightfulcreators:mushroom_stew"
+    }
+  ]
+}

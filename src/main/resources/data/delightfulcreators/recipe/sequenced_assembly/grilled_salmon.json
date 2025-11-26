@@ -1,0 +1,81 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:grilled_salmon"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_grilled_salmon"
+        },
+        {
+          "tag": "c:foods/cooked_salmon"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_grilled_salmon"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_grilled_salmon"
+        },
+        {
+          "tag": "c:crops/cabbage"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_grilled_salmon"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_grilled_salmon"
+        },
+        {
+          "item": "minecraft:sweet_berries"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_grilled_salmon"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_grilled_salmon"
+        },
+        {
+          "tag": "c:crops/onion"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_grilled_salmon"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_grilled_salmon"
+  }
+}

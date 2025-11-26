@@ -1,0 +1,65 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:tortilla"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:mutton_wrap"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_mutton_wrap"
+        },
+        {
+          "tag": "c:foods/cooked_mutton"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_mutton_wrap"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_mutton_wrap"
+        },
+        {
+          "tag": "c:foods/cabbage"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_mutton_wrap"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_mutton_wrap"
+        },
+        {
+          "tag": "c:crops/onion"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_mutton_wrap"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_mutton_wrap"
+  }
+}

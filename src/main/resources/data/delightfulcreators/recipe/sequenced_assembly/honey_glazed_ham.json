@@ -1,0 +1,67 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:honey_glazed_ham_block"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_honey_glazed_ham"
+        },
+        {
+          "item": "farmersdelight:smoked_ham"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_honey_glazed_ham"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_honey_glazed_ham"
+        },
+        {
+          "item": "minecraft:sweet_berries"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_honey_glazed_ham"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_honey_glazed_ham"
+        },
+        {
+                      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:honey"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_honey_glazed_ham"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_honey_glazed_ham"
+  }
+}

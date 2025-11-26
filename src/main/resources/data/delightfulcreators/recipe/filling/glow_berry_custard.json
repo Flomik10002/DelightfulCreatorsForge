@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "delightfulcreators:glow_berry_custard"
+    }
+  ],
+  "results": [
+    {
+      "id": "farmersdelight:glow_berry_custard"
+    }
+  ]
+}

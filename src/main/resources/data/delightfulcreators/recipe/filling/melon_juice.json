@@ -1,0 +1,19 @@
+{
+
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "delightfulcreators:melon_juice"
+    }
+  ],
+  "results": [
+    {
+      "id": "farmersdelight:melon_juice"
+    }
+  ]
+}

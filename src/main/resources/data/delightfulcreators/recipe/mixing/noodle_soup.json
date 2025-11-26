@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "farmersdelight:raw_pasta"
+    },
+    {
+      "item": "farmersdelight:fried_egg"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "tag": "c:foods/raw_pork"
+    }
+  ],
+  "results": [
+    {
+            "amount": 333,
+      "id": "delightfulcreators:noodle_soup"
+    }
+  ]
+}

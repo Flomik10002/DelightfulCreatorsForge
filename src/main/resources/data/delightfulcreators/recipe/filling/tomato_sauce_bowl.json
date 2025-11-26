@@ -1,0 +1,19 @@
+{
+
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "delightfulcreators:tomato_sauce"
+    }
+  ],
+  "results": [
+    {
+      "id": "farmersdelight:tomato_sauce"
+    }
+  ]
+}

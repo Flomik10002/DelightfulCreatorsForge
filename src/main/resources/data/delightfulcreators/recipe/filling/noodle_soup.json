@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 333,
+      "fluid": "delightfulcreators:noodle_soup"
+    }
+  ],
+  "results": [
+    {
+      "id": "farmersdelight:noodle_soup"
+    }
+  ]
+}

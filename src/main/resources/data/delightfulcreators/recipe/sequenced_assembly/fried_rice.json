@@ -1,0 +1,65 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:fried_rice"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_fried_rice"
+        },
+        {
+          "item": "minecraft:egg"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_fried_rice"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_fried_rice"
+        },
+        {
+          "item": "minecraft:carrot"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_fried_rice"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_fried_rice"
+        },
+        {
+          "tag": "c:crops/onion"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_fried_rice"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_fried_rice"
+  }
+}

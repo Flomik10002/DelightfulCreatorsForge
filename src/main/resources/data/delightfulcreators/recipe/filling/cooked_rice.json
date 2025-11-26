@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "delightfulcreators:cooked_rice"
+    }
+  ],
+  "results": [
+    {
+      "id": "farmersdelight:cooked_rice"
+    }
+  ]
+}

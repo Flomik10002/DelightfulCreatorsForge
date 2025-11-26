@@ -1,0 +1,67 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "farmersdelight:pie_crust"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "farmersdelight:sweet_berry_cheesecake"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_sweet_berry_cheesecake"
+        },
+        {
+          "item": "minecraft:sweet_berries"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_sweet_berry_cheesecake"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_sweet_berry_cheesecake"
+        },
+        {
+          "item": "minecraft:sweet_berries"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_sweet_berry_cheesecake"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_sweet_berry_cheesecake"
+        },
+        {
+          "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:milk"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_sweet_berry_cheesecake"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_sweet_berry_cheesecake"
+  }
+}

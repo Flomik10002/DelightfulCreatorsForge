@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bone"
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minecraft:glow_berries"
+        },
+        {
+          "tag": "c:mushrooms"
+        },
+        {
+          "item": "minecraft:hanging_roots"
+        },
+        {
+          "item": "minecraft:glow_lichen"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "amount": 333,
+      "id": "delightfulcreators:bone_broth"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:bread"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "farmersdelight:egg_sandwich"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_egg_sandwich"
+        },
+        {
+          "item": "farmersdelight:fried_egg"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_egg_sandwich"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_egg_sandwich"
+  }
+}

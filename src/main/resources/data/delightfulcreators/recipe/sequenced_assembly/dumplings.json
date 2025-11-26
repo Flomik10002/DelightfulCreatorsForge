@@ -1,0 +1,80 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "farmersdelight:wheat_dough"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:dumplings",
+      "count": 2
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_dumplings"
+        },
+        {
+          "tag": "c:crops/onion"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_dumplings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_dumplings"
+        },
+        {
+          "type": "neoforge:compound",
+          "children": [
+            {
+              "tag": "c:foods/raw_chicken"
+            },
+            {
+              "tag": "c:foods/raw_pork"
+            },
+            {
+              "tag": "c:foods/raw_beef"
+            },
+            {
+              "item": "minecraft:brown_mushroom"
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_dumplings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_dumplings"
+        },
+        {
+          "tag": "c:foods/cabbage"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_dumplings"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_dumplings"
+  }
+}

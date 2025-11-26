@@ -1,0 +1,81 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:bread"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:hamburger"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_hamburger"
+        },
+        {
+          "item": "farmersdelight:beef_patty"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_hamburger"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_hamburger"
+        },
+        {
+          "tag": "c:foods/cabbage"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_hamburger"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_hamburger"
+        },
+        {
+          "tag": "c:crops/tomato"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_hamburger"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_hamburger"
+        },
+        {
+          "tag": "c:crops/onion"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_hamburger"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_hamburger"
+  }
+}

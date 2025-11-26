@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:foods/safe_raw_fish"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 333,
+      "fluid": "delightfulcreators:tomato_sauce"
+    },
+    {
+      "tag": "c:crops/onion"
+    }
+  ],
+  "results": [
+    {
+      "amount": 333,
+      "id": "delightfulcreators:fish_stew"
+    }
+  ]
+}

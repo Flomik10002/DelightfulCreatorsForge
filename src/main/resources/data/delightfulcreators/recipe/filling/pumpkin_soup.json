@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 333,
+      "fluid": "delightfulcreators:pumpkin_soup"
+    }
+  ],
+  "results": [
+    {
+      "id": "farmersdelight:pumpkin_soup"
+    }
+  ]
+}

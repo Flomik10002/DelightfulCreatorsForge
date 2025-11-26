@@ -1,0 +1,65 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "delightfulcreators:incomplete_pasta_dish"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:squid_ink_pasta"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_squid_ink_pasta"
+        },
+        {
+          "item": "minecraft:ink_sac"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_squid_ink_pasta"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_squid_ink_pasta"
+        },
+        {
+          "tag": "c:crops/tomato"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_squid_ink_pasta"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_squid_ink_pasta"
+        },
+        {
+          "tag": "c:foods/safe_raw_fish"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_squid_ink_pasta"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_squid_ink_pasta"
+  }
+}

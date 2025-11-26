@@ -1,0 +1,49 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:nether_salad"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_nether_salad"
+        },
+        {
+          "item": "minecraft:crimson_fungus"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_nether_salad"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_nether_salad"
+        },
+        {
+          "item": "minecraft:warped_fungus"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_nether_salad"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_nether_salad"
+  }
+}

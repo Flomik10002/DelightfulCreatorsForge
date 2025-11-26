@@ -1,0 +1,65 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:bread_slices"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:bacon_sandwich"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_bacon_sandwich"
+        },
+        {
+          "item": "farmersdelight:cooked_bacon"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_bacon_sandwich"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_bacon_sandwich"
+        },
+        {
+          "tag": "c:foods/cabbage"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_bacon_sandwich"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_bacon_sandwich"
+        },
+        {
+          "tag": "c:crops/tomato"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_bacon_sandwich"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_bacon_sandwich"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "farmersdelight:mushroom_rice"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_mushroom_rice"
+        },
+        {
+          "item": "minecraft:brown_mushroom"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_mushroom_rice"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_mushroom_rice"
+        },
+        {
+          "item": "minecraft:red_mushroom"
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_mushroom_rice"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "delightfulcreators:incomplete_mushroom_rice"
+        },
+        {
+          "type": "neoforge:compound",
+          "children": [
+            {
+              "item": "minecraft:carrot"
+            },
+            {
+              "item": "minecraft:potato"
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "id": "delightfulcreators:incomplete_mushroom_rice"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "delightfulcreators:incomplete_mushroom_rice"
+  }
+}

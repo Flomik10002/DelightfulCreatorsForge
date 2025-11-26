@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:foods/cabbage"
+    },
+    {
+      "tag": "farmersdelight:cabbage_roll_ingredients"
+    }
+  ],
+  "results": [
+    {
+      "id": "farmersdelight:cabbage_rolls"
+    }
+  ]
+}

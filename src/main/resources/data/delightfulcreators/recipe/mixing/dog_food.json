@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "delightfulcreators:cooked_rice"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "tag": "c:foods/raw_meat"
+    }
+  ],
+  "results": [
+    {
+      "amount": 333,
+      "id": "delightfulcreators:dog_food"
+    }
+  ]
+}
