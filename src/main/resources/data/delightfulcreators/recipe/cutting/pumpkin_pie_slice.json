@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "create:dough"
+      "item": "minecraft:pumpkin_pie"
     }
   ],
   "result": [
