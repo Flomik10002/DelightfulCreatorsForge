@@ -1,6 +1,5 @@
 package dev.flomik.delightfulcreators.compat.ponder;
 
-import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.simibubi.create.content.kinetics.press.PressingBehaviour.Mode;
 import com.simibubi.create.foundation.ponder.CreateSceneBuilder;
 import com.simibubi.create.foundation.ponder.element.BeltItemElement;
@@ -12,19 +11,22 @@ import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.createmod.ponder.api.scene.Selection;
 
+import dev.flomik.delightfulcreators.block.ModBlocks;
+import dev.flomik.delightfulcreators.block.cutter.MechanicalCutterBlockEntity;
 import dev.flomik.delightfulcreators.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * TEMPORARY: this ponder scene is Create's own "mechanical_press/pressing" schematic verbatim
- * (the block being manipulated below really is a MechanicalPressBlockEntity, not our own block)
- * with only the narration and example items swapped to talk about cutting - we have no schematic
- * of our own yet. Once the Mechanical Cutter
- * gets real art, this should get its own recorded scene.
+ * TEMPORARY: this ponder scene reuses the layout of Create's own "mechanical_press/pressing"
+ * schematic (belts, depot, shaft placement) since we have no recorded schematic of our own yet,
+ * but the press block itself is swapped out for our actual Mechanical Cutter the moment it's
+ * revealed, so the scene both looks like and truly is operating our block, not Create's Press.
+ * Once the Mechanical Cutter gets real art, this should get its own recorded scene.
  */
 public class CutterScenes {
 
@@ -43,6 +45,10 @@ public class CutterScenes {
         Selection cutterS = util.select().position(2, 3, 2);
         BlockPos cutterPos = util.grid().at(2, 3, 2);
         BlockPos depotPos = util.grid().at(2, 1, 1);
+        scene.world().modifyBlock(cutterPos, state -> ModBlocks.MECHANICAL_CUTTER.get()
+                .defaultBlockState()
+                .setValue(BlockStateProperties.HORIZONTAL_FACING, state.getValue(BlockStateProperties.HORIZONTAL_FACING)),
+                false);
         scene.world().setKineticSpeed(cutterS, 0);
         scene.world().showSection(cutterS, Direction.DOWN);
         scene.idle(10);
@@ -74,7 +80,7 @@ public class CutterScenes {
         scene.overlay().showControls(depotCenter, Pointing.UP, 30).withItem(pumpkinPie);
         scene.idle(10);
 
-        Class<MechanicalPressBlockEntity> type = MechanicalPressBlockEntity.class;
+        Class<MechanicalCutterBlockEntity> type = MechanicalCutterBlockEntity.class;
         scene.world().modifyBlockEntity(cutterPos, type, pte -> pte.getPressingBehaviour()
                 .start(Mode.BELT));
         scene.idle(30);
