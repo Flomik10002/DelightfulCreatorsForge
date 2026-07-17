@@ -15,8 +15,10 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.world.level.block.state.BlockState;
 
 /**
- * Reuses Create's Mechanical Press head model/texture for the cutter's press animation, since this
- * block currently has no dedicated art of its own.
+ * TEMPORARY PLACEHOLDER ART: reuses Create's Mechanical Press head model/texture for the cutter's
+ * press animation, since this block has no dedicated art of its own yet. Swap out the model/texture
+ * references here and in assets/delightfulcreators/models/block(/item)/mechanical_cutter.json once
+ * real art exists.
  *
  * This block has no Flywheel Visual registered, and Create's base KineticBlockEntityRenderer skips
  * all rendering (shaft included) once a Flywheel backend is active, so the shaft/head are rendered

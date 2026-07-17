@@ -1,3 +1,4 @@
 {
+  "credit": "TEMPORARY placeholder - reusing Create's Mechanical Press model until dedicated art exists",
   "parent": "create:block/mechanical_press/item"
 }
