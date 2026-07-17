@@ -124,6 +124,7 @@ repositories {
     maven { url = "https://maven.createmod.net" } // Create, Flywheel
     maven { url = "https://maven.ithundxr.dev/mirror" } // Registrate
     maven { url = "https://api.modrinth.com/maven" } // Farmer's Delight
+    maven { url = "https://maven.blamejared.com" } // JEI
 
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:flat_dir_resolver
@@ -160,6 +161,11 @@ dependencies {
 
     // Farmer's Delight
     implementation fg.deobf("maven.modrinth:farmers-delight:${minecraft_version}-${farmersdelight_version}")
+
+    // JEI (soft dependency, compile-time only - recipe viewer integration for the Mechanical Cutter)
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    // runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
