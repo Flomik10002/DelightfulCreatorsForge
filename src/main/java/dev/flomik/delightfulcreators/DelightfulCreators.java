@@ -5,6 +5,7 @@ import net.createmod.ponder.foundation.PonderIndex;
 import dev.flomik.delightfulcreators.block.ModBlockEntityTypes;
 import dev.flomik.delightfulcreators.block.ModBlocks;
 import dev.flomik.delightfulcreators.block.cutter.MechanicalCutterRenderer;
+import dev.flomik.delightfulcreators.block.cutter.ModPartialModels;
 import dev.flomik.delightfulcreators.compat.ponder.DelightfulCreatorsPonderPlugin;
 import dev.flomik.delightfulcreators.fluid.ModFluids;
 import dev.flomik.delightfulcreators.fluid.ModFluidsTypes;
@@ -74,6 +75,7 @@ public class DelightfulCreators {
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_TOMATO_SAUCE.get(), RenderType.solid());
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_TOMATO_SAUCE.get(), RenderType.solid());
             });
+            ModPartialModels.init();
             PonderIndex.addPlugin(new DelightfulCreatorsPonderPlugin());
         }
 
