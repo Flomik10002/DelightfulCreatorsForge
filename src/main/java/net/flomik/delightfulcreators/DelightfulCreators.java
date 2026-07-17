@@ -1,7 +1,9 @@
 package net.flomik.delightfulcreators;
 
 import com.mojang.logging.LogUtils;
+import net.flomik.delightfulcreators.block.ModBlockEntityTypes;
 import net.flomik.delightfulcreators.block.ModBlocks;
+import net.flomik.delightfulcreators.block.cutter.MechanicalCutterRenderer;
 import net.flomik.delightfulcreators.fluid.ModFluids;
 import net.flomik.delightfulcreators.fluid.ModFluidsTypes;
 import net.flomik.delightfulcreators.item.ModCreativeModTabs;
@@ -10,6 +12,7 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -33,6 +36,7 @@ public class DelightfulCreators {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntityTypes.register(modEventBus);
 
         ModFluidsTypes.register(modEventBus);
         ModFluids.register(modEventBus);
@@ -65,6 +69,11 @@ public class DelightfulCreators {
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_TOMATO_SAUCE.get(), RenderType.solid());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_TOMATO_SAUCE.get(), RenderType.solid());
+        }
+
+        @SubscribeEvent
+        public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntityTypes.MECHANICAL_CUTTER.get(), MechanicalCutterRenderer::new);
         }
     }
 }

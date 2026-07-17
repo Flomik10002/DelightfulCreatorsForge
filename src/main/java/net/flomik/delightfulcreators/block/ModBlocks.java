@@ -1,6 +1,8 @@
 package net.flomik.delightfulcreators.block;
 
+import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
 import net.flomik.delightfulcreators.DelightfulCreators;
+import net.flomik.delightfulcreators.block.cutter.MechanicalCutterBlock;
 import net.flomik.delightfulcreators.fluid.ModFluids;
 import net.flomik.delightfulcreators.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -8,7 +10,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -75,6 +79,18 @@ public class ModBlocks {
 
     public static final RegistryObject<LiquidBlock> COOKED_RICE_BLOCK = BLOCKS.register("cooked_rice_block",
             () -> new LiquidBlock(ModFluids.SOURCE_COOKED_RICE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+    public static final RegistryObject<MechanicalCutterBlock> MECHANICAL_CUTTER = BLOCKS.register("mechanical_cutter",
+            () -> new MechanicalCutterBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PODZOL)
+                    .sound(SoundType.WOOD)
+                    .strength(1.5F, 6.0F)
+                    .noOcclusion()));
+
+    // Uses Create's own AssemblyOperatorBlockItem so that placing this block directly on top of a
+    // belt/depot/basin (like the Mechanical Press) skips the required empty gap automatically.
+    public static final RegistryObject<Item> MECHANICAL_CUTTER_ITEM = ModItems.ITEMS.register("mechanical_cutter",
+            () -> new AssemblyOperatorBlockItem(MECHANICAL_CUTTER.get(), new Item.Properties()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
