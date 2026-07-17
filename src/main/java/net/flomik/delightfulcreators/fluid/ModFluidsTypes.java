@@ -18,12 +18,12 @@ public class ModFluidsTypes {
     public static final ResourceLocation STILL_HOT_COCOA_RL = new ResourceLocation(DelightfulCreators.MOD_ID, "block/hot_cocoa_still");
     public static final ResourceLocation FLOWING_HOT_COCOA_RL = new ResourceLocation(DelightfulCreators.MOD_ID, "block/hot_cocoa_flow");
     public static final ResourceLocation HOT_COCOA_OVERLAY_RL = new ResourceLocation(DelightfulCreators.MOD_ID, "block/hot_cocoa_still");
-    public static final ResourceLocation STILL_MELON_JUICE_RL = new ResourceLocation("block/water_still");
-    public static final ResourceLocation FLOWING_MELON_JUICE_RL = new ResourceLocation("block/water_flow");
-    public static final ResourceLocation MELON_JUICE_OVERLAY_RL = new ResourceLocation("block/water_still");
-    public static final ResourceLocation STILL_APPLE_CIDER_RL = new ResourceLocation("block/water_still");
-    public static final ResourceLocation FLOWING_APPLE_CIDER_RL = new ResourceLocation("block/water_flow");
-    public static final ResourceLocation APPLE_CIDER_OVERLAY_RL = new ResourceLocation("block/water_still");
+    public static final ResourceLocation STILL_MELON_JUICE_RL = new ResourceLocation("minecraft", "block/water_still");
+    public static final ResourceLocation FLOWING_MELON_JUICE_RL = new ResourceLocation("minecraft", "block/water_flow");
+    public static final ResourceLocation MELON_JUICE_OVERLAY_RL = new ResourceLocation("minecraft", "block/water_still");
+    public static final ResourceLocation STILL_APPLE_CIDER_RL = new ResourceLocation("minecraft", "block/water_still");
+    public static final ResourceLocation FLOWING_APPLE_CIDER_RL = new ResourceLocation("minecraft", "block/water_flow");
+    public static final ResourceLocation APPLE_CIDER_OVERLAY_RL = new ResourceLocation("minecraft", "block/water_still");
     public static final ResourceLocation STILL_BEETROOT_SOUP_RL = new ResourceLocation(DelightfulCreators.MOD_ID, "block/beetroot_soup_still");
     public static final ResourceLocation FLOWING_BEETROOT_SOUP_RL = new ResourceLocation(DelightfulCreators.MOD_ID, "block/beetroot_soup_flow");
     public static final ResourceLocation BEETROOT_SOUP_OVERLAY_RL = new ResourceLocation(DelightfulCreators.MOD_ID, "block/beetroot_soup_still");
@@ -85,12 +85,12 @@ public class ModFluidsTypes {
 
     public static final RegistryObject<FluidType> MELON_JUICE_FLUID_TYPE = FLUID_TYPES.register("melon_juice_fluid_type",
             () -> new BaseFluidType(STILL_MELON_JUICE_RL, FLOWING_MELON_JUICE_RL, MELON_JUICE_OVERLAY_RL,
-                0xA1FFFFFF, new Vector3f(196f / 255f, 24f / 255f, 16f / 255f), FluidType.Properties.create()
+                0xB2E8D53A, new Vector3f(196f / 255f, 24f / 255f, 16f / 255f), FluidType.Properties.create()
                     .canSwim(true).density(3000).viscosity(4000).sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK)));
 
     public static final RegistryObject<FluidType> APPLE_CIDER_FLUID_TYPE = FLUID_TYPES.register("apple_cider_fluid_type",
             () -> new BaseFluidType(STILL_APPLE_CIDER_RL, FLOWING_APPLE_CIDER_RL, APPLE_CIDER_OVERLAY_RL,
-                0xA1FFFFFF, new Vector3f(196f / 255f, 24f / 255f, 16f / 255f), FluidType.Properties.create()
+                0xB2C77A2E, new Vector3f(196f / 255f, 24f / 255f, 16f / 255f), FluidType.Properties.create()
                     .canSwim(true).density(3000).viscosity(4000).sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK)));
 
     public static final RegistryObject<FluidType> BEETROOT_SOUP_FLUID_TYPE = FLUID_TYPES.register("beetroot_soup_fluid_type",
