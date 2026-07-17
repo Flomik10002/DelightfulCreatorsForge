@@ -13,6 +13,7 @@ repositories {
     maven { url = "https://maven.createmod.net" } // Create, Flywheel, Ponder
     maven { url = "https://maven.ithundxr.dev/snapshots" } // Registrate
     maven { url = "https://api.modrinth.com/maven" } // Farmer's Delight
+    maven { url = "https://maven.blamejared.com" } // JEI
 }
 
 base {
@@ -121,6 +122,11 @@ dependencies {
 
     // Farmer's Delight
     implementation "maven.modrinth:farmers-delight:${minecraft_version}-${farmersdelight_version}"
+
+    // JEI (soft dependency, compile-time only - recipe viewer integration for the Mechanical Cutter)
+    compileOnly "mezz.jei:jei-${jei_minecraft}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${jei_minecraft}-neoforge-api:${jei_version}"
+    // runtimeOnly "mezz.jei:jei-${jei_minecraft}-neoforge:${jei_version}"
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
