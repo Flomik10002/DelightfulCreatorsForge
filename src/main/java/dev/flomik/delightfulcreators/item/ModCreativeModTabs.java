@@ -1,6 +1,7 @@
 package dev.flomik.delightfulcreators.item;
 
 import dev.flomik.delightfulcreators.DelightfulCreators;
+import dev.flomik.delightfulcreators.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -67,6 +68,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.BAKED_COD_STEW_BUCKET.get());
                         output.accept(ModItems.BONE_BROTH_BUCKET.get());
                         output.accept(ModItems.COOKED_RICE_BUCKET.get());
+                        output.accept(ModBlocks.MECHANICAL_CUTTER.get());
 
                     })
                     .build());

@@ -10,6 +10,9 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven { url = "https://maven.createmod.net" } // Create, Flywheel, Ponder
+    maven { url = "https://maven.ithundxr.dev/snapshots" } // Registrate
+    maven { url = "https://api.modrinth.com/maven" } // Farmer's Delight
 }
 
 base {
@@ -112,6 +115,12 @@ dependencies {
 
     // Example project dependency using a sister or child project:
     // implementation project(":myproject")
+
+    // Create (Gradle module metadata pulls in Registrate/Ponder/Flywheel transitively)
+    implementation "com.simibubi.create:create-${minecraft_version}:${create_version}"
+
+    // Farmer's Delight
+    implementation "maven.modrinth:farmers-delight:${minecraft_version}-${farmersdelight_version}"
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html

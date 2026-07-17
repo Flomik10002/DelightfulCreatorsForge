@@ -1,12 +1,18 @@
 package dev.flomik.delightfulcreators.block;
 
+import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
 import dev.flomik.delightfulcreators.DelightfulCreators;
+import dev.flomik.delightfulcreators.block.cutter.MechanicalCutterBlock;
 import dev.flomik.delightfulcreators.fluid.ModFluids;
+import dev.flomik.delightfulcreators.item.ModItems;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -71,6 +77,18 @@ public class ModBlocks {
 
     public static final DeferredHolder<Block, LiquidBlock> COOKED_RICE_BLOCK = BLOCKS.register("cooked_rice_block",
             () -> new LiquidBlock(ModFluids.SOURCE_COOKED_RICE.get(), BlockBehaviour.Properties.of().noCollission().strength(100.0F).noLootTable()));
+
+    public static final DeferredHolder<Block, MechanicalCutterBlock> MECHANICAL_CUTTER = BLOCKS.register("mechanical_cutter",
+            () -> new MechanicalCutterBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PODZOL)
+                    .sound(SoundType.WOOD)
+                    .strength(1.5F, 6.0F)
+                    .noOcclusion()));
+
+    // Uses Create's own AssemblyOperatorBlockItem so that placing this block directly on top of a
+    // belt/depot/basin (like the Mechanical Press) skips the required empty gap automatically.
+    public static final DeferredHolder<Item, Item> MECHANICAL_CUTTER_ITEM = ModItems.ITEMS.register("mechanical_cutter",
+            () -> new AssemblyOperatorBlockItem(MECHANICAL_CUTTER.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

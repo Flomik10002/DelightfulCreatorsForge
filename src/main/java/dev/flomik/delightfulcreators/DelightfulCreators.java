@@ -1,7 +1,9 @@
 package dev.flomik.delightfulcreators;
 
 import com.mojang.logging.LogUtils;
+import dev.flomik.delightfulcreators.block.ModBlockEntityTypes;
 import dev.flomik.delightfulcreators.block.ModBlocks;
+import dev.flomik.delightfulcreators.block.cutter.MechanicalCutterRenderer;
 import dev.flomik.delightfulcreators.fluid.ModFluids;
 import dev.flomik.delightfulcreators.fluid.ModFluidsTypes;
 import dev.flomik.delightfulcreators.item.ModCreativeModTabs;
@@ -17,6 +19,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -34,6 +37,7 @@ public class DelightfulCreators {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntityTypes.register(modEventBus);
 
         ModFluidsTypes.register(modEventBus);
         ModFluids.register(modEventBus);
@@ -68,6 +72,11 @@ public class DelightfulCreators {
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_TOMATO_SAUCE.get(), RenderType.solid());
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_TOMATO_SAUCE.get(), RenderType.solid());
             });
+        }
+
+        @SubscribeEvent
+        public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntityTypes.MECHANICAL_CUTTER.get(), MechanicalCutterRenderer::new);
         }
     }
 }
