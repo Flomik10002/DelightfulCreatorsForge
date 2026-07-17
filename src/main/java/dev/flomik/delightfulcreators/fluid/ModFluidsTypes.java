@@ -85,12 +85,12 @@ public class ModFluidsTypes {
 
     public static final DeferredHolder<FluidType, FluidType> MELON_JUICE_FLUID_TYPE = FLUID_TYPES.register("melon_juice_fluid_type",
             () -> new BaseFluidType(STILL_MELON_JUICE_RL, FLOWING_MELON_JUICE_RL, MELON_JUICE_OVERLAY_RL,
-                0xA1FFFFFF, new Vector3f(196f / 255f, 24f / 255f, 16f / 255f), FluidType.Properties.create()
+                0xB2E8D53A, new Vector3f(196f / 255f, 24f / 255f, 16f / 255f), FluidType.Properties.create()
                     .canSwim(true).density(3000).viscosity(4000).sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK)));
 
     public static final DeferredHolder<FluidType, FluidType> APPLE_CIDER_FLUID_TYPE = FLUID_TYPES.register("apple_cider_fluid_type",
             () -> new BaseFluidType(STILL_APPLE_CIDER_RL, FLOWING_APPLE_CIDER_RL, APPLE_CIDER_OVERLAY_RL,
-                0xA1FFFFFF, new Vector3f(196f / 255f, 24f / 255f, 16f / 255f), FluidType.Properties.create()
+                0xB2C77A2E, new Vector3f(196f / 255f, 24f / 255f, 16f / 255f), FluidType.Properties.create()
                     .canSwim(true).density(3000).viscosity(4000).sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK)));
 
     public static final DeferredHolder<FluidType, FluidType> BEETROOT_SOUP_FLUID_TYPE = FLUID_TYPES.register("beetroot_soup_fluid_type",
