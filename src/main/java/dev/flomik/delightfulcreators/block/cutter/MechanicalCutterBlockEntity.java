@@ -33,7 +33,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.ItemHandlerHelper;
 
 import vectorwing.farmersdelight.common.crafting.CuttingBoardRecipe;
 import vectorwing.farmersdelight.common.crafting.CuttingBoardRecipeInput;
@@ -49,10 +48,10 @@ import vectorwing.farmersdelight.common.registry.ModRecipeTypes;
  * (see CuttingProcessingRecipe) so the Cutter can be used as a step inside a Create Sequenced
  * Assembly chain, the same way the real Mechanical Press does via PressingRecipe.
  *
- * PORT RISK: matchStaticFilters()'s RecipeHolder<? extends Recipe<?>> parameter type and the
- * resulting currentRecipe.value() unwrap, and the Capabilities.ItemHandler.BLOCK basin item-handler
- * lookup, could not be verified against the real Create 1.21.1 jar in this environment (no network
- * access to Create's Maven repo) - check this file early if compileJava fails here.
+ * matchStaticFilters()'s RecipeHolder<? extends Recipe<?>> parameter type and the
+ * Capabilities.ItemHandler.BLOCK basin item-handler lookup were verified against the real Create/
+ * NeoForge 1.21.1 jars. BasinOperatingBlockEntity#currentRecipe is a plain Recipe<?>, not a
+ * RecipeHolder<?>, so it's used directly with no .value() unwrap.
  */
 public class MechanicalCutterBlockEntity extends BasinOperatingBlockEntity implements PressingBehaviourSpecifics {
 
@@ -109,7 +108,7 @@ public class MechanicalCutterBlockEntity extends BasinOperatingBlockEntity imple
         // types, which would silently drop the chance-rolled secondary results that
         // CuttingBoardRecipe supports. rollRecipeResults() below already handles those correctly
         // for the belt/world paths, so basin mode reuses the same logic.
-        if (currentRecipe == null || !(currentRecipe.value() instanceof CuttingBoardRecipe recipe))
+        if (currentRecipe == null || !(currentRecipe instanceof CuttingBoardRecipe recipe))
             return;
 
         Optional<BasinBlockEntity> optionalBasin = getBasin();
@@ -225,7 +224,7 @@ public class MechanicalCutterBlockEntity extends BasinOperatingBlockEntity imple
                 return true;
             pressingBehaviour.particleItems.add(input.stack);
             outputList.addAll(RecipeApplier.applyRecipeOn(level,
-                    canProcessInBulk() ? input.stack : ItemHandlerHelper.copyStackWithSize(input.stack, 1),
+                    canProcessInBulk() ? input.stack : input.stack.copyWithCount(1),
                     assemblyRecipe.get()
                             .value(),
                     true));

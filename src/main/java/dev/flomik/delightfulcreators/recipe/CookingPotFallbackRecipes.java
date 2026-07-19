@@ -38,14 +38,14 @@ import org.slf4j.Logger;
  * FoodPropertiesFallbackMixin (see dev.flomik.delightfulcreators.mixin) makes sure that stack can't
  * be eaten for the real dish's nutrition/effects while it's still mid-sequence.
  *
- * PORT RISK: the JSON field names below (results use "id"/"amount" rather than "item", ingredients
- * still use "item"/"tag", fluid ingredients need the "neoforge:single"/"neoforge:tag" wrapper) were
- * cross-checked against this branch's own committed recipe files (bacon_sandwich.json,
- * stuffed_potato.json, emptying/tomato_sauce.json), but the *input* side - Farmer's Delight's own
- * "farmersdelight:cooking" recipe schema ("result"/"ingredients"/"container", all assumed to still
- * use "item") - could not be verified against the real Farmer's Delight 1.21.1 jar in this
- * environment (no network access to Modrinth's Maven). Check this file if generated fallback
- * recipes fail to parse or don't show up in the runServer log.
+ * The JSON field names below (results use "id"/"amount" rather than "item", ingredients still use
+ * "item"/"tag", fluid ingredients need the "neoforge:single"/"neoforge:tag" wrapper) were cross-
+ * checked against this branch's own committed recipe files (bacon_sandwich.json, stuffed_potato.json,
+ * emptying/tomato_sauce.json). Farmer's Delight 1.21.1's own "farmersdelight:cooking" recipe schema
+ * was verified against the real Farmer's Delight 1.21.1 jar: "result" and "container" both already
+ * use the vanilla ItemStack-result shape ("id"/"count"), not FD's older "item"-keyed Ingredient shape
+ * - see containerAsIngredient()/impliedContainer() below for where that gets converted back into a
+ * plain Ingredient for use in the generated recipe's own "ingredients" array.
  */
 public class CookingPotFallbackRecipes {
 
@@ -94,11 +94,11 @@ public class CookingPotFallbackRecipes {
                 continue;
 
             JsonObject fdResult = cookingRecipe.getAsJsonObject("result");
-            if (fdResult == null || !fdResult.has("item")) {
+            if (fdResult == null || !fdResult.has("id")) {
                 LOGGER.debug("Skipping fallback for {}: no simple item result", entry.getKey());
                 continue;
             }
-            String resultId = fdResult.get("item").getAsString();
+            String resultId = fdResult.get("id").getAsString();
             if (handledResults.contains(resultId)) {
                 LOGGER.debug("Skipping fallback for {}: already hand-authored", entry.getKey());
                 continue;
@@ -133,13 +133,14 @@ public class CookingPotFallbackRecipes {
         return result;
     }
 
-    // Farmer's Delight's own "result" field is shaped like an Ingredient ({"item": ..., "count": ?}),
-    // but Create's own "results" entries use the vanilla ItemStack-result shape ({"id": ...,
-    // "count": ?}) instead - see this branch's own emptying/tomato_sauce.json and
-    // sequenced_assembly/bacon_sandwich.json.
+    // Farmer's Delight 1.21.1's own "result"/"container" fields already use the same vanilla
+    // ItemStack-result shape ({"id": ..., "count": ?}) Create's own "results" entries use - see this
+    // branch's own emptying/tomato_sauce.json and sequenced_assembly/bacon_sandwich.json, and FD's
+    // own data/farmersdelight/recipe/cooking/mushroom_stew.json. Only "id"/"count" are copied over,
+    // dropping any FD-only fields.
     private static JsonObject toResultOutput(JsonObject fdItemOutput) {
         JsonObject output = new JsonObject();
-        output.addProperty("id", fdItemOutput.get("item").getAsString());
+        output.addProperty("id", fdItemOutput.get("id").getAsString());
         if (fdItemOutput.has("count"))
             output.addProperty("count", fdItemOutput.get("count").getAsInt());
         return output;
@@ -158,25 +159,34 @@ public class CookingPotFallbackRecipes {
             return new JsonArray();
 
         JsonObject container = cookingRecipe.getAsJsonObject("container");
-        if (container == null || !container.has("item"))
-            container = impliedContainer(fdResult);
-        if (container == null)
+        JsonObject containerIngredient = container != null && container.has("id") ? containerAsIngredient(container)
+                : impliedContainer(fdResult);
+        if (containerIngredient == null)
             return ingredients;
 
         JsonArray withContainer = new JsonArray();
-        withContainer.add(container);
+        withContainer.add(containerIngredient);
         ingredients.forEach(withContainer::add);
         return withContainer;
     }
 
+    // The "container" field (and impliedContainer()'s crafting-remainder lookup below) both describe
+    // an item by id, FD-ItemStack-shaped ({"id": ...}) or otherwise - convert to a plain vanilla
+    // Ingredient ({"item": ...}) so it can sit in the generated recipe's own ingredients array.
+    private static JsonObject containerAsIngredient(JsonObject container) {
+        JsonObject ingredient = new JsonObject();
+        ingredient.addProperty("item", container.get("id").getAsString());
+        return ingredient;
+    }
+
     private static JsonObject impliedContainer(JsonObject fdResult) {
-        if (fdResult == null || !fdResult.has("item"))
+        if (fdResult == null || !fdResult.has("id"))
             return null;
-        ResourceLocation resultId = ResourceLocation.tryParse(fdResult.get("item").getAsString());
+        ResourceLocation resultId = ResourceLocation.tryParse(fdResult.get("id").getAsString());
         if (resultId == null)
             return null;
 
-        Item item = BuiltInRegistries.ITEM.getValue(resultId);
+        Item item = BuiltInRegistries.ITEM.get(resultId);
         if (item == null || !item.hasCraftingRemainingItem())
             return null;
 

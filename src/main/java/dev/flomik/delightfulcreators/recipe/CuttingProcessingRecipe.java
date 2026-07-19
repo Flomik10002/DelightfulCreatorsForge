@@ -5,8 +5,8 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 import com.simibubi.create.compat.jei.category.sequencedAssembly.SequencedAssemblySubCategory;
-import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
-import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder.ProcessingRecipeParams;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipeParams;
+import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
 import com.simibubi.create.content.processing.sequenced.IAssemblyRecipe;
 
 import dev.flomik.delightfulcreators.DelightfulCreators;
@@ -27,12 +27,11 @@ import net.neoforged.api.distmarker.OnlyIn;
  * this type only exists if a datapack explicitly declares a "delightfulcreators:cutting_processing"
  * step inside a "create:sequenced_assembly" recipe.
  *
- * PORT RISK: the ProcessingRecipe<I, P> generic shape (I = SingleRecipeInput, P =
- * ProcessingRecipeParams) is inferred from Create 6.0's move to Minecraft 1.21's RecipeInput/Codec
- * recipe system and could not be verified against the real Create 1.21.1 jar in this environment
- * (no network access to Create's Maven repo) - check this file first if compileJava fails here.
+ * Extends StandardProcessingRecipe (the ProcessingRecipe<I, ProcessingRecipeParams> subclass Create's
+ * own PressingRecipe uses) rather than ProcessingRecipe directly, matching the real Create 6.0/1.21.1
+ * API verified against the compiled Create jar.
  */
-public class CuttingProcessingRecipe extends ProcessingRecipe<SingleRecipeInput, ProcessingRecipeParams>
+public class CuttingProcessingRecipe extends StandardProcessingRecipe<SingleRecipeInput>
         implements IAssemblyRecipe {
 
     public CuttingProcessingRecipe(ProcessingRecipeParams params) {

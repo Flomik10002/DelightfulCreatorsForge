@@ -20,10 +20,12 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
  * access needed. Runs on every reload (initial load and /reload), always working from the freshly-
  * loaded, real on-disk JSON only - nothing generated here ever persists between reloads.
  */
-@Mixin(RecipeManager.class)
+@Mixin(value = RecipeManager.class, remap = false)
 public class RecipeManagerMixin {
 
-    @ModifyVariable(method = "apply", at = @At("HEAD"))
+    @ModifyVariable(
+            method = "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V",
+            at = @At("HEAD"))
     private Map<ResourceLocation, JsonElement> delightfulcreators$injectFallbacks(
             Map<ResourceLocation, JsonElement> object) {
         Map<ResourceLocation, JsonElement> withCookingFallbacks = CookingPotFallbackRecipes.withFallbacks(object);
