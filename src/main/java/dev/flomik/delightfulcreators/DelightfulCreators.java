@@ -7,10 +7,12 @@ import dev.flomik.delightfulcreators.block.ModBlocks;
 import dev.flomik.delightfulcreators.block.cutter.MechanicalCutterRenderer;
 import dev.flomik.delightfulcreators.block.cutter.ModPartialModels;
 import dev.flomik.delightfulcreators.compat.ponder.DelightfulCreatorsPonderPlugin;
+import dev.flomik.delightfulcreators.config.DCServerConfig;
 import dev.flomik.delightfulcreators.fluid.ModFluids;
 import dev.flomik.delightfulcreators.fluid.ModFluidsTypes;
 import dev.flomik.delightfulcreators.item.ModCreativeModTabs;
 import dev.flomik.delightfulcreators.item.ModItems;
+import net.neoforged.fml.config.ModConfig;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -44,6 +46,8 @@ public class DelightfulCreators {
 
         ModFluidsTypes.register(modEventBus);
         ModFluids.register(modEventBus);
+
+        modContainer.registerConfig(ModConfig.Type.SERVER, DCServerConfig.SERVER_SPEC);
 
         modEventBus.addListener(this::commonSetup);
 

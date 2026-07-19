@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.flomik.delightfulcreators.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "RecipeManagerMixin",
+    "FoodPropertiesFallbackMixin"
+  ],
+  "client": [],
+  "server": []
+}

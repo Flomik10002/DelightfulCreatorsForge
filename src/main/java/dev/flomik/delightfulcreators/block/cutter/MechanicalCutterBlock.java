@@ -2,6 +2,7 @@ package dev.flomik.delightfulcreators.block.cutter;
 
 import com.simibubi.create.AllShapes;
 import com.simibubi.create.content.kinetics.base.HorizontalKineticBlock;
+import com.simibubi.create.content.processing.basin.BasinBlock;
 import com.simibubi.create.foundation.block.IBE;
 
 import dev.flomik.delightfulcreators.block.ModBlockEntityTypes;
@@ -21,8 +22,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 /**
  * Kinetic block that processes Farmer's Delight cutting board recipes, analogous to Create's
- * Mechanical Press but without any basin support underneath - it only handles items passed on a
- * belt/depot or dropped in the world above it.
+ * Mechanical Press including optional Basin support underneath it (see
+ * MechanicalCutterBlockEntity).
  */
 public class MechanicalCutterBlock extends HorizontalKineticBlock implements IBE<MechanicalCutterBlockEntity> {
 
@@ -37,6 +38,13 @@ public class MechanicalCutterBlock extends HorizontalKineticBlock implements IBE
             return AllShapes.CASING_14PX.get(Direction.DOWN);
 
         return AllShapes.MECHANICAL_PROCESSOR_SHAPE;
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
+        // Leaves the same one-block gap the AssemblyOperatorBlockItem places automatically:
+        // the basin belongs two blocks below the Cutter, not directly beneath it.
+        return !BasinBlock.isBasin(worldIn, pos.below());
     }
 
     @Override

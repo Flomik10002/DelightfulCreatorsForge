@@ -100,6 +100,16 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 
 dependencies {
+    // Our own Mixin (used to inject fallback Sequenced Assembly recipes for Farmer's Delight
+    // Cooking Pot recipes that aren't already hand-authored - see dev.flomik.delightfulcreators.mixin).
+    // NeoForge bundles the Mixin runtime itself and reads the mixin config declared in
+    // neoforge.mods.toml, so only the annotation processor is needed here for compile-time checking;
+    // unlike Forge, no refmap/SRG remapping step is required since NeoForge uses Mojang mappings
+    // throughout. PORT RISK: ModDevGradle has no documented first-class Mixin DSL (unlike
+    // ForgeGradle's mixingradle plugin master's build used) - this is the minimal setup based on
+    // NeoForge bundling Mixin natively, not verified by an actual build in this environment.
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
     // Example mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
