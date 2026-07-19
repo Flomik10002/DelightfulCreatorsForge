@@ -1,0 +1,415 @@
+{
+  "parent": "delightfulcreators:root",
+  "criteria": {
+    "incomplete_apple_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_apple_pie"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_bacon_and_eggs": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_bacon_and_eggs"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_bacon_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_bacon_sandwich"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_chicken_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_chicken_sandwich"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_dumplings": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_dumplings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_egg_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_egg_sandwich"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_fried_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_fried_rice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_fruit_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_fruit_salad"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_grilled_salmon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_grilled_salmon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_hamburger": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_hamburger"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_honey_glazed_ham": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_honey_glazed_ham"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_horse_feed": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_horse_feed"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_mixed_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_mixed_salad"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_mushroom_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_mushroom_rice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_mutton_wrap": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_mutton_wrap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_nether_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_nether_salad"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_pasta_dish": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_pasta_dish"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_pasta_with_meatballs": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_pasta_with_meatballs"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_pasta_with_mutton_chop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_pasta_with_mutton_chop"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_pumpkin_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_pumpkin_pie"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_rice_roll_medley": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_rice_roll_medley"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_roast_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_roast_chicken"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_roasted_mutton_chops": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_roasted_mutton_chops"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_shepherds_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_shepherds_pie"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_squid_ink_pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_squid_ink_pasta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_steak_and_potatoes": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_steak_and_potatoes"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_stuffed_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_stuffed_potato"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_stuffed_pumpkin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_stuffed_pumpkin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_sweet_berry_cheesecake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_sweet_berry_cheesecake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "incomplete_vegetable_noodles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delightfulcreators:incomplete_vegetable_noodles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.delightfulcreators.almost_done.desc"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "delightfulcreators:incomplete_sweet_berry_cheesecake"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.delightfulcreators.almost_done"
+    }
+  },
+  "requirements": [
+    [
+      "incomplete_apple_pie",
+      "incomplete_bacon_and_eggs",
+      "incomplete_bacon_sandwich",
+      "incomplete_chicken_sandwich",
+      "incomplete_dumplings",
+      "incomplete_egg_sandwich",
+      "incomplete_fried_rice",
+      "incomplete_fruit_salad",
+      "incomplete_grilled_salmon",
+      "incomplete_hamburger",
+      "incomplete_honey_glazed_ham",
+      "incomplete_horse_feed",
+      "incomplete_mixed_salad",
+      "incomplete_mushroom_rice",
+      "incomplete_mutton_wrap",
+      "incomplete_nether_salad",
+      "incomplete_pasta_dish",
+      "incomplete_pasta_with_meatballs",
+      "incomplete_pasta_with_mutton_chop",
+      "incomplete_pumpkin_pie",
+      "incomplete_rice_roll_medley",
+      "incomplete_roast_chicken",
+      "incomplete_roasted_mutton_chops",
+      "incomplete_shepherds_pie",
+      "incomplete_squid_ink_pasta",
+      "incomplete_steak_and_potatoes",
+      "incomplete_stuffed_potato",
+      "incomplete_stuffed_pumpkin",
+      "incomplete_sweet_berry_cheesecake",
+      "incomplete_vegetable_noodles"
+    ]
+  ]
+}
