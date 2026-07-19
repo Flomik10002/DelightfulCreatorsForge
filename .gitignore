@@ -22,5 +22,9 @@ eclipse
 run
 run-data
 
+# local research material, never committed
+/research
+/docs
+
 # Files from Forge MDK
 forge*changelog.txt

@@ -15,6 +15,7 @@ import mezz.jei.api.registration.IRecipeRegistration;
 
 import net.flomik.delightfulcreators.DelightfulCreators;
 import net.flomik.delightfulcreators.block.ModBlocks;
+import net.flomik.delightfulcreators.recipe.KnifeCuttingRecipes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.network.chat.Component;
@@ -70,7 +71,11 @@ public class DelightfulCreatorsJeiPlugin implements IModPlugin {
         ClientLevel level = Minecraft.getInstance().level;
         if (level == null)
             return List.of();
-        return level.getRecipeManager().getAllRecipesFor(ModRecipeTypes.CUTTING.get());
+        return level.getRecipeManager()
+                .getAllRecipesFor(ModRecipeTypes.CUTTING.get())
+                .stream()
+                .filter(KnifeCuttingRecipes::isKnifeRecipe)
+                .toList();
     }
 
 }

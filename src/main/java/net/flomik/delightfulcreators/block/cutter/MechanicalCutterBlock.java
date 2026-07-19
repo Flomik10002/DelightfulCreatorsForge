@@ -2,6 +2,7 @@ package net.flomik.delightfulcreators.block.cutter;
 
 import com.simibubi.create.AllShapes;
 import com.simibubi.create.content.kinetics.base.HorizontalKineticBlock;
+import com.simibubi.create.content.processing.basin.BasinBlock;
 import com.simibubi.create.foundation.block.IBE;
 
 import net.flomik.delightfulcreators.block.ModBlockEntityTypes;
@@ -37,6 +38,13 @@ public class MechanicalCutterBlock extends HorizontalKineticBlock implements IBE
             return AllShapes.CASING_14PX.get(Direction.DOWN);
 
         return AllShapes.MECHANICAL_PROCESSOR_SHAPE;
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
+        // Leaves the same one-block gap the AssemblyOperatorBlockItem places automatically:
+        // the basin belongs two blocks below the Cutter, not directly beneath it.
+        return !BasinBlock.isBasin(worldIn, pos.below());
     }
 
     @Override

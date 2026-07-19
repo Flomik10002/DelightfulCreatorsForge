@@ -60,7 +60,9 @@ public class MechanicalCuttingCategory extends CreateRecipeCategory<CuttingBoard
         return (view, tooltip) -> {
             float chance = output.getChance();
             if (chance != 1)
-                tooltip.add(Component.translatable("recipe.processing.chance", chance < 0.01 ? "<1" : (int) (chance * 100))
+                // Same key/format Farmer's Delight's own Cutting Board JEI category uses:
+                // "jei.farmersdelight.chance" -> "%1$s%% chance".
+                tooltip.add(Component.translatable("jei.farmersdelight.chance", chance < 0.01 ? "<1" : (int) (chance * 100))
                         .withStyle(ChatFormatting.GOLD));
         };
     }

@@ -14,10 +14,9 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.world.level.block.state.BlockState;
 
 /**
- * TEMPORARY PLACEHOLDER ART: renders our own copy of Create's Mechanical Press head model/texture
- * (see ModPartialModels + assets/delightfulcreators/models/block/mechanical_cutter/*.json), copied
- * rather than referenced directly from Create so it's ours to edit. Swap the model/texture files out
- * once real art exists - no Java changes needed for that part.
+ * Renders our own copy of the Mechanical Press head model/texture (see ModPartialModels +
+ * assets/delightfulcreators/models/block/mechanical_cutter/*.json), kept in our own namespace rather
+ * than referenced directly from Create so it's ours to edit.
  *
  * This block has no Flywheel Visual registered, and Create's base KineticBlockEntityRenderer skips
  * all rendering (shaft included) once a Flywheel backend is active, so the shaft/head are rendered

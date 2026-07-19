@@ -22,11 +22,9 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * TEMPORARY: this ponder scene reuses the layout of Create's own "mechanical_press/pressing"
- * schematic (belts, depot, shaft placement) since we have no recorded schematic of our own yet,
- * but the press block itself is swapped out for our actual Mechanical Cutter the moment it's
+ * Reuses the layout of Create's own "mechanical_press/pressing" schematic (belts, depot, shaft
+ * placement), but swaps the press block out for our actual Mechanical Cutter the moment it's
  * revealed, so the scene both looks like and truly is operating our block, not Create's Press.
- * Once the Mechanical Cutter gets real art, this should get its own recorded scene.
  */
 public class CutterScenes {
 

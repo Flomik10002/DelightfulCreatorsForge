@@ -102,7 +102,9 @@
   "delightfulcreators.ponder.mechanical_cutter.text_3": "When items are provided on a belt...",
   "delightfulcreators.ponder.mechanical_cutter.text_4": "The Cutter will hold and process them automatically",
   "advancement.delightfulcreators.almost_done": "Almost done",
-  "advancement.delightfulcreators.almost_done.desc": "Grunt, spit and securely glue with adhesive tape!",
+  "advancement.delightfulcreators.almost_done.desc": "Grit, spit, and a whole lot of duct tape!",
   "advancement.delightfulcreators.fluid_bucket": "Culinary engineer",
-  "advancement.delightfulcreators.fluid_bucket.desc": "Application of engineering knowledge in cooking!"
+  "advancement.delightfulcreators.fluid_bucket.desc": "Application of engineering knowledge in cooking!",
+
+  "delightfulcreators.recipe.assembly.cutting": "Cut in a Mechanical Cutter"
 }

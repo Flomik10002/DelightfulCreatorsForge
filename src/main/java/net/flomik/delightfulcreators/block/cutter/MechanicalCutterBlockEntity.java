@@ -1,23 +1,37 @@
 package net.flomik.delightfulcreators.block.cutter;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.belt.transport.TransportedItemStack;
 import com.simibubi.create.content.kinetics.press.PressingBehaviour;
+import com.simibubi.create.content.kinetics.press.PressingBehaviour.Mode;
 import com.simibubi.create.content.kinetics.press.PressingBehaviour.PressingBehaviourSpecifics;
+import com.simibubi.create.content.processing.basin.BasinBlockEntity;
+import com.simibubi.create.content.processing.basin.BasinOperatingBlockEntity;
+import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
+import com.simibubi.create.foundation.item.SmartInventory;
+import com.simibubi.create.foundation.recipe.RecipeApplier;
 
 import net.createmod.catnip.math.VecHelper;
+import net.flomik.delightfulcreators.config.DCServerConfig;
+import net.flomik.delightfulcreators.recipe.CuttingProcessingRecipe;
+import net.flomik.delightfulcreators.recipe.DCRecipeTypes;
+import net.flomik.delightfulcreators.recipe.KnifeCuttingRecipes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
@@ -26,13 +40,18 @@ import vectorwing.farmersdelight.common.crafting.CuttingBoardRecipe;
 import vectorwing.farmersdelight.common.registry.ModRecipeTypes;
 
 /**
- * Runs every Farmer's Delight cutting board recipe found on items passing on a belt/depot or
- * dropped in the world above this block, reusing Create's Mechanical Press animation and belt
- * processing behaviour. Unlike the Mechanical Press, this block entity never looks for a basin
- * underneath it.
+ * Runs every Farmer's Delight cutting board recipe whose tool matches a knife (the "knife_dig"
+ * subset of Farmer's Delight's own cutting recipes) found on items passing on a belt/depot, dropped
+ * in the world above this block, or (if enabled via config, on by default) sitting in a Basin two
+ * blocks below it - reusing Create's Mechanical Press animation, belt processing behaviour and
+ * basin-operating machinery. Axe/shovel cutting-board recipes (log stripping, digging) are left to
+ * the tools they actually require. Also recognises "delightfulcreators:cutting_processing" recipes
+ * (see CuttingProcessingRecipe) so the Cutter can be used as a step inside a Create Sequenced
+ * Assembly chain, the same way the real Mechanical Press does via PressingRecipe.
  */
-public class MechanicalCutterBlockEntity extends KineticBlockEntity implements PressingBehaviourSpecifics {
+public class MechanicalCutterBlockEntity extends BasinOperatingBlockEntity implements PressingBehaviourSpecifics {
 
+    private static final Object cuttingRecipesKey = new Object();
     private static final RecipeWrapper CUTTING_INV = new RecipeWrapper(new ItemStackHandler(1));
 
     public PressingBehaviour pressingBehaviour;
@@ -59,14 +78,112 @@ public class MechanicalCutterBlockEntity extends KineticBlockEntity implements P
         return pressingBehaviour;
     }
 
+    // --- Basin processing (config-gated, mirrors Create's Mechanical Press) ---
+
     @Override
     public boolean tryProcessInBasin(boolean simulate) {
-        return false;
+        applyBasinRecipe();
+
+        Optional<BasinBlockEntity> basin = getBasin();
+        if (basin.isPresent()) {
+            SmartInventory inputs = basin.get()
+                    .getInputInventory();
+            for (int slot = 0; slot < inputs.getSlots(); slot++) {
+                ItemStack stackInSlot = inputs.getItem(slot);
+                if (stackInSlot.isEmpty())
+                    continue;
+                pressingBehaviour.particleItems.add(stackInSlot);
+            }
+        }
+
+        return true;
     }
+
+    @Override
+    protected void applyBasinRecipe() {
+        // Reimplemented rather than relying on the generic BasinRecipe.apply() path used by the
+        // parent class: that path falls back to Recipe#getResultItem() for non-ProcessingRecipe
+        // types, which would silently drop the chance-rolled secondary results that
+        // CuttingBoardRecipe supports. rollRecipeResults() below already handles those correctly
+        // for the belt/world paths, so basin mode reuses the same logic.
+        if (!(currentRecipe instanceof CuttingBoardRecipe recipe))
+            return;
+
+        Optional<BasinBlockEntity> optionalBasin = getBasin();
+        if (optionalBasin.isEmpty())
+            return;
+        BasinBlockEntity basin = optionalBasin.get();
+
+        IItemHandler items = basin.getCapability(ForgeCapabilities.ITEM_HANDLER)
+                .orElse(null);
+        if (items == null)
+            return;
+
+        for (int slot = 0; slot < items.getSlots(); slot++) {
+            ItemStack extracted = items.extractItem(slot, 1, true);
+            if (extracted.isEmpty() || !recipe.getIngredients()
+                    .get(0)
+                    .test(extracted))
+                continue;
+
+            items.extractItem(slot, 1, false);
+            List<ItemStack> outputs = rollRecipeResults(recipe, 1);
+            basin.acceptOutputs(outputs, Collections.emptyList(), false);
+            basin.notifyChangeOfContents();
+            break;
+        }
+    }
+
+    @Override
+    protected boolean isRunning() {
+        return pressingBehaviour.running;
+    }
+
+    @Override
+    protected void onBasinRemoved() {
+        pressingBehaviour.particleItems.clear();
+        pressingBehaviour.running = false;
+        pressingBehaviour.runningTicks = 0;
+        sendData();
+    }
+
+    @Override
+    public void startProcessingBasin() {
+        if (pressingBehaviour.running && pressingBehaviour.runningTicks <= PressingBehaviour.CYCLE / 2)
+            return;
+        super.startProcessingBasin();
+        pressingBehaviour.start(Mode.BASIN);
+    }
+
+    @Override
+    protected <C extends Container> boolean matchStaticFilters(Recipe<C> recipe) {
+        if (!DCServerConfig.SERVER.mechanicalCutterBasinProcessing.get())
+            return false;
+        return recipe.getType() == ModRecipeTypes.CUTTING.get() && recipe instanceof CuttingBoardRecipe cuttingRecipe
+                && KnifeCuttingRecipes.isKnifeRecipe(cuttingRecipe);
+    }
+
+    @Override
+    protected Object getRecipeCacheKey() {
+        return cuttingRecipesKey;
+    }
+
+    // --- Belt / world processing ---
 
     @Override
     public boolean tryProcessInWorld(ItemEntity itemEntity, boolean simulate) {
         ItemStack item = itemEntity.getItem();
+
+        Optional<CuttingProcessingRecipe> assemblyRecipe = SequencedAssemblyRecipe.getRecipe(level, item,
+                DCRecipeTypes.CUTTING_PROCESSING.getType(), CuttingProcessingRecipe.class);
+        if (assemblyRecipe.isPresent()) {
+            if (simulate)
+                return true;
+            pressingBehaviour.particleItems.add(item);
+            RecipeApplier.applyRecipeOn(itemEntity, assemblyRecipe.get(), true);
+            return true;
+        }
+
         Optional<CuttingBoardRecipe> recipe = getRecipe(item);
         if (recipe.isEmpty())
             return false;
@@ -95,6 +212,18 @@ public class MechanicalCutterBlockEntity extends KineticBlockEntity implements P
 
     @Override
     public boolean tryProcessOnBelt(TransportedItemStack input, List<ItemStack> outputList, boolean simulate) {
+        Optional<CuttingProcessingRecipe> assemblyRecipe = SequencedAssemblyRecipe.getRecipe(level, input.stack,
+                DCRecipeTypes.CUTTING_PROCESSING.getType(), CuttingProcessingRecipe.class);
+        if (assemblyRecipe.isPresent()) {
+            if (simulate)
+                return true;
+            pressingBehaviour.particleItems.add(input.stack);
+            outputList.addAll(RecipeApplier.applyRecipeOn(level,
+                    canProcessInBulk() ? input.stack : ItemHandlerHelper.copyStackWithSize(input.stack, 1),
+                    assemblyRecipe.get(), true));
+            return true;
+        }
+
         Optional<CuttingBoardRecipe> recipe = getRecipe(input.stack);
         if (recipe.isEmpty())
             return false;
@@ -109,7 +238,12 @@ public class MechanicalCutterBlockEntity extends KineticBlockEntity implements P
 
     @Override
     public void onPressingCompleted() {
-        // No basin to hand off to - nothing further to do once the animation finishes.
+        if (pressingBehaviour.onBasin() && matchBasinRecipe(currentRecipe)
+                && getBasin().filter(BasinBlockEntity::canContinueProcessing)
+                        .isPresent())
+            startProcessingBasin();
+        else
+            basinChecker.scheduleUpdate();
     }
 
     private void spawnResultEntity(ItemEntity source, ItemStack stack) {
@@ -148,8 +282,9 @@ public class MechanicalCutterBlockEntity extends KineticBlockEntity implements P
         if (lastRecipe != null && lastRecipe.matches(CUTTING_INV, level))
             return Optional.of(lastRecipe);
 
-        Optional<CuttingBoardRecipe> recipe =
-                level.getRecipeManager().getRecipeFor(ModRecipeTypes.CUTTING.get(), CUTTING_INV, level);
+        Optional<CuttingBoardRecipe> recipe = level.getRecipeManager()
+                .getRecipeFor(ModRecipeTypes.CUTTING.get(), CUTTING_INV, level)
+                .filter(KnifeCuttingRecipes::isKnifeRecipe);
         recipe.ifPresent(r -> lastRecipe = r);
         return recipe;
     }

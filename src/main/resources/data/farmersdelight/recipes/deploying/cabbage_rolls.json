@@ -4,9 +4,20 @@
     {
       "tag": "forge:salad_ingredients"
     },
-    {
-      "tag": "farmersdelight:cabbage_roll_ingredients"
-    }
+    [
+      {
+        "tag": "forge:raw_meat"
+      },
+      {
+        "tag": "forge:raw_fishes"
+      },
+      {
+        "tag": "forge:vegetables"
+      },
+      {
+        "tag": "forge:mushrooms"
+      }
+    ]
   ],
   "results": [
     {

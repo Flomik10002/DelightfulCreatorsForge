@@ -102,7 +102,9 @@
   "delightfulcreators.ponder.mechanical_cutter.text_3": "Когда предметы подаются по ленте...",
   "delightfulcreators.ponder.mechanical_cutter.text_4": "Резак сам захватит и обработает их автоматически",
   "advancement.delightfulcreators.almost_done": "Почти готово",
-  "advancement.delightfulcreators.almost_done.desc": "Хрюкайте, плюйтесь и надежно приклейте клейкой лентой!",
+  "advancement.delightfulcreators.almost_done.desc": "Крякнем, плюнем - и надежно склеим скотчем!",
   "advancement.delightfulcreators.fluid_bucket": "Инженер-кулинар",
-  "advancement.delightfulcreators.fluid_bucket.desc": "Применение инженерных знаний в кулинарии!"
+  "advancement.delightfulcreators.fluid_bucket.desc": "Применение инженерных знаний в кулинарии!",
+
+  "delightfulcreators.recipe.assembly.cutting": "Разрезать в Механическом Резаке"
 }

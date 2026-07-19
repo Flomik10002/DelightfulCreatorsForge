@@ -7,10 +7,12 @@ import net.flomik.delightfulcreators.block.ModBlocks;
 import net.flomik.delightfulcreators.block.cutter.MechanicalCutterRenderer;
 import net.flomik.delightfulcreators.block.cutter.ModPartialModels;
 import net.flomik.delightfulcreators.compat.ponder.DelightfulCreatorsPonderPlugin;
+import net.flomik.delightfulcreators.config.DCServerConfig;
 import net.flomik.delightfulcreators.fluid.ModFluids;
 import net.flomik.delightfulcreators.fluid.ModFluidsTypes;
 import net.flomik.delightfulcreators.item.ModCreativeModTabs;
 import net.flomik.delightfulcreators.item.ModItems;
+import net.flomik.delightfulcreators.recipe.DCRecipeTypes;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -21,7 +23,9 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -43,6 +47,10 @@ public class DelightfulCreators {
 
         ModFluidsTypes.register(modEventBus);
         ModFluids.register(modEventBus);
+
+        DCRecipeTypes.register(modEventBus);
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, DCServerConfig.SERVER_SPEC);
 
         modEventBus.addListener(this::commonSetup);
 
