@@ -12,6 +12,7 @@ import dev.flomik.delightfulcreators.fluid.ModFluids;
 import dev.flomik.delightfulcreators.fluid.ModFluidsTypes;
 import dev.flomik.delightfulcreators.item.ModCreativeModTabs;
 import dev.flomik.delightfulcreators.item.ModItems;
+import dev.flomik.delightfulcreators.recipe.DCRecipeTypes;
 import net.neoforged.fml.config.ModConfig;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -46,6 +47,8 @@ public class DelightfulCreators {
 
         ModFluidsTypes.register(modEventBus);
         ModFluids.register(modEventBus);
+
+        DCRecipeTypes.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.SERVER, DCServerConfig.SERVER_SPEC);
 

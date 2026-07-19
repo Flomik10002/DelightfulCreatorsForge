@@ -65,8 +65,13 @@ public class CookingPotFallbackRecipes {
 
     // Item tags that represent "a container of X liquid" - matched against a plain {"tag": ...}
     // ingredient and converted into a "create:filling" step using the fluid tag of the same name,
-    // instead of deploying the item as-is.
-    private static final Map<String, String> ITEM_TAG_TO_FLUID_TAG = Map.of("c:milk", "c:milk");
+    // instead of deploying the item as-is. "c:milk" is the fluid tag itself; it never appears as an
+    // ingredient's item tag, so the container tags that actually show up in recipes (bottled or
+    // bucketed milk - confirmed against Farmer's Delight's and NeoForge's own 1.21.1 tag files) are
+    // the ones that need mapping here.
+    private static final Map<String, String> ITEM_TAG_TO_FLUID_TAG = Map.of(
+            "c:drinks/milk", "c:milk",
+            "c:buckets/milk", "c:milk");
 
     // Bowl/bottle/bucket - the only container shapes Farmer's Delight's own bowlFoodItem() registration
     // helper (and vanilla's own stew items) use. Matched against getCraftingRemainingItem() below.

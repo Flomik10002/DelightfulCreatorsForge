@@ -133,10 +133,11 @@ dependencies {
     // Farmer's Delight
     implementation "maven.modrinth:farmers-delight:${minecraft_version}-${farmersdelight_version}"
 
-    // JEI (soft dependency, compile-time only - recipe viewer integration for the Mechanical Cutter)
+    // JEI (soft dependency - recipe viewer integration for the Mechanical Cutter). Compile-time API
+    // plus the real runtime jar so it actually loads in runClient for manual testing.
     compileOnly "mezz.jei:jei-${jei_minecraft}-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-${jei_minecraft}-neoforge-api:${jei_version}"
-    // runtimeOnly "mezz.jei:jei-${jei_minecraft}-neoforge:${jei_version}"
+    runtimeOnly "mezz.jei:jei-${jei_minecraft}-neoforge:${jei_version}"
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html

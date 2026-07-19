@@ -104,5 +104,7 @@
   "advancement.delightfulcreators.almost_done": "Почти готово",
   "advancement.delightfulcreators.almost_done.desc": "Хрюкайте, плюйтесь и надежно приклейте клейкой лентой!",
   "advancement.delightfulcreators.fluid_bucket": "Инженер-кулинар",
-  "advancement.delightfulcreators.fluid_bucket.desc": "Применение инженерных знаний в кулинарии!"
+  "advancement.delightfulcreators.fluid_bucket.desc": "Применение инженерных знаний в кулинарии!",
+
+  "delightfulcreators.recipe.assembly.cutting": "Разрезать в Механическом Резаке"
 }
