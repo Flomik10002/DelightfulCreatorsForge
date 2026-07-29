@@ -1,4 +1,4 @@
-[CURSEFORGE]: https://curseforge.com/minecraft/mc-mods/delightful-creators-fabric
+[CURSEFORGE]: https://curseforge.com/minecraft/mc-mods/delightful-creators-forge
 
 # Delightful Creators 
 
