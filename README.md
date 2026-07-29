@@ -1,4 +1,4 @@
-[CURSEFORGE]: https://curseforge.com/minecraft/mc-mods/delightful-creators-fabric
+[CURSEFORGE]: https://curseforge.com/minecraft/mc-mods/delightful-creators-forge
 
 # Delightful Creators 
 
@@ -14,15 +14,9 @@ Delightful Creators is an addon for Farmer's Delight and Create which adds new r
 • New fluids for soups, stews and sauces etc.<br>
 • Possibility to make fluids by mixing ingredients in a mixer.<br>
 • Possibility to fill the bowl with stews or soups.<br>
-• Possibility to cut pumpkin pie.<br>
 • Recipes for honey and sweet berry cookies.<br>
-• Recipe for chocolate pie.
-
-## Quick Start
-1. Install Forge Loader (MC 1.XX).
-2. Drop Farmer's Delight and Create JARs into `mods/`.
-3. Drop JAR into `mods/`.
-4. Launch and explore new farming options.
+• Recipe for chocolate pie.<br>
+• Mechanical Cutter — automates Farmer's Delight's Cutting Board recipes.
 
 ## Localization:
 • English (en_us) - Flomik<br>
