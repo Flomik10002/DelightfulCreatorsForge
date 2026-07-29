@@ -14,10 +14,14 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.world.level.block.state.BlockState;
 
 /**
- * TEMPORARY PLACEHOLDER ART: renders our own copy of Create's Mechanical Press head model/texture
- * (see ModPartialModels + assets/delightfulcreators/models/block/mechanical_cutter/*.json), copied
- * rather than referenced directly from Create so it's ours to edit. Swap the model/texture files out
- * once real art exists - no Java changes needed for that part.
+ * TEMPORARY PLACEHOLDER ART: renders our own copy of Create's Mechanical Press body/pole model
+ * with a spinning blade head (see ModPartialModels + assets/delightfulcreators/models/block/mechanical_cutter/*.json),
+ * copied rather than referenced directly from Create so it's ours to edit. The blade uses vanilla's
+ * animated stonecutter_saw texture, so it spins on its own via Minecraft's texture animation -
+ * no per-frame rotation code needed here. The head is rendered into {@link RenderType#cutout()}
+ * rather than solid() precisely because that texture has hard alpha edges - the model's own
+ * "render_type" JSON field is NOT read here, since this SuperByteBuffer is drawn into a manually
+ * chosen buffer instead of going through the normal model render-layer pipeline.
  *
  * This block has no Flywheel Visual registered, and Create's base KineticBlockEntityRenderer skips
  * all rendering (shaft included) once a Flywheel backend is active, so the shaft/head are rendered
@@ -50,7 +54,7 @@ public class MechanicalCutterRenderer extends KineticBlockEntityRenderer<Mechani
                 blockState.getValue(HORIZONTAL_FACING));
         headRender.translate(0, -renderedHeadOffset, 0)
                 .light(light)
-                .renderInto(ms, buffer.getBuffer(RenderType.solid()));
+                .renderInto(ms, buffer.getBuffer(RenderType.cutout()));
     }
 
     @Override

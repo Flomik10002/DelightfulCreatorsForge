@@ -101,9 +101,6 @@ public class ModItems {
     public static final DeferredHolder<Item, Item> INCOMPLETE_STEAK_AND_POTATOES = ITEMS.register("incomplete_steak_and_potatoes",
             () -> new Item(new Item.Properties().food(ModFoods.INCOMPLETE_BOWL)));
 
-    public static final DeferredHolder<Item, Item> PUMPKIN_PIE_SLICE = ITEMS.register("pumpkin_pie_slice",
-            () -> new Item(new Item.Properties().food(ModFoods.INCOMPLETE)));
-
     public static final DeferredHolder<Item, Item> INCOMPLETE_STUFFED_POTATO = ITEMS.register("incomplete_stuffed_potato",
             () -> new Item(new Item.Properties().food(ModFoods.INCOMPLETE)));
 

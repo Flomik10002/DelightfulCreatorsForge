@@ -1,7 +1,9 @@
 {
-	"credit": "Model generated using MrCrayfish's Model Creator - copied from Create's Mechanical Press as a temporary placeholder",
+	"credit": "Model generated using MrCrayfish's Model Creator - copied from Create's Mechanical Press as a temporary placeholder, with 8 radial blades hanging off the underside so it reads as a cutter instead of a press",
+	"render_type": "minecraft:cutout",
 	"textures": {
 		"mechanical_press_head": "delightfulcreators:block/mechanical_cutter_head",
+		"blade": "minecraft:block/stonecutter_saw",
 		"mechanical_press_pole": "delightfulcreators:block/mechanical_cutter_pole"
 	},
 	"elements": [
@@ -71,7 +73,7 @@
 			}
 		},
 		{
-			"name": "Head",
+			"name": "Platform",
 			"from": [3, 0, 3],
 			"to": [13, 4, 13],
 			"faces": {
@@ -81,6 +83,44 @@
 				"west": {"uv": [1, 0, 11, 4], "texture": "#mechanical_press_head"},
 				"up": {"uv": [1, 5, 11, 15], "rotation": 180, "texture": "#mechanical_press_head"},
 				"down": {"uv": [1, 5, 11, 15], "rotation": 180, "texture": "#mechanical_press_head"}
+			}
+		},
+		{
+			"name": "Blade0",
+			"from": [8, -6, 2],
+			"to": [8, 0, 14],
+			"faces": {
+				"east": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"},
+				"west": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"}
+			}
+		},
+		{
+			"name": "Blade45",
+			"from": [8, -6, 2],
+			"to": [8, 0, 14],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"},
+				"west": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"}
+			}
+		},
+		{
+			"name": "Blade90",
+			"from": [2, -6, 8],
+			"to": [14, 0, 8],
+			"faces": {
+				"north": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"},
+				"south": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"}
+			}
+		},
+		{
+			"name": "Blade135",
+			"from": [2, -6, 8],
+			"to": [14, 0, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"},
+				"south": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"}
 			}
 		}
 	]

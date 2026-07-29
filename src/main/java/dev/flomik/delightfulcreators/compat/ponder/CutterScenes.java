@@ -13,13 +13,13 @@ import net.createmod.ponder.api.scene.Selection;
 
 import dev.flomik.delightfulcreators.block.ModBlocks;
 import dev.flomik.delightfulcreators.block.cutter.MechanicalCutterBlockEntity;
-import dev.flomik.delightfulcreators.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 /**
  * TEMPORARY: this ponder scene reuses the layout of Create's own "mechanical_press/pressing"
