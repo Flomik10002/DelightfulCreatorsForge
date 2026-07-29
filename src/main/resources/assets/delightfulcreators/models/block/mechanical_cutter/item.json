@@ -1,12 +1,14 @@
 {
-	"credit": "Made with Blockbench - copied from Create's Mechanical Press as a temporary placeholder",
+	"credit": "Made with Blockbench - copied from Create's Mechanical Press as a temporary placeholder, with 8 radial blades hanging off the underside so it reads as a cutter instead of a press",
 	"parent": "block/block",
+	"render_type": "minecraft:cutout",
 	"textures": {
 		"0": "create:block/axis",
 		"1": "create:block/axis_top",
 		"8": "delightfulcreators:block/mechanical_cutter_side",
 		"particle": "delightfulcreators:block/mechanical_cutter_side",
 		"mechanical_press_head": "delightfulcreators:block/mechanical_cutter_head",
+		"blade": "minecraft:block/stonecutter_saw",
 		"gearbox_top": "create:block/gearbox_top",
 		"mechanical_press_pole": "delightfulcreators:block/mechanical_cutter_pole",
 		"gearbox": "create:block/gearbox",
@@ -127,7 +129,7 @@
 			}
 		},
 		{
-			"name": "Head",
+			"name": "Platform",
 			"from": [3, 0, 3],
 			"to": [13, 4, 13],
 			"faces": {
@@ -137,6 +139,44 @@
 				"west": {"uv": [1, 0, 11, 4], "texture": "#mechanical_press_head"},
 				"up": {"uv": [1, 5, 11, 15], "rotation": 180, "texture": "#mechanical_press_head"},
 				"down": {"uv": [1, 5, 11, 15], "rotation": 180, "texture": "#mechanical_press_head"}
+			}
+		},
+		{
+			"name": "Blade0",
+			"from": [8, -6, 2],
+			"to": [8, 0, 14],
+			"faces": {
+				"east": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"},
+				"west": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"}
+			}
+		},
+		{
+			"name": "Blade45",
+			"from": [8, -6, 2],
+			"to": [8, 0, 14],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"},
+				"west": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"}
+			}
+		},
+		{
+			"name": "Blade90",
+			"from": [2, -6, 8],
+			"to": [14, 0, 8],
+			"faces": {
+				"north": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"},
+				"south": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"}
+			}
+		},
+		{
+			"name": "Blade135",
+			"from": [2, -6, 8],
+			"to": [14, 0, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"},
+				"south": {"uv": [1, 9, 15, 16], "rotation": 180, "texture": "#blade"}
 			}
 		},
 		{
@@ -176,11 +216,15 @@
 		8,
 		9,
 		10,
+		11,
+		12,
+		13,
+		14,
 		{
 			"name": "shaft",
 			"origin": [8, 8, 8],
 			"color": 0,
-			"children": [11]
+			"children": [15]
 		}
 	]
 }

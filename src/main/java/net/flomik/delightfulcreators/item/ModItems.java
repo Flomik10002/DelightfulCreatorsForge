@@ -102,9 +102,6 @@ public class ModItems {
     public static final RegistryObject<Item> INCOMPLETE_STEAK_AND_POTATOES = ITEMS.register("incomplete_steak_and_potatoes",
             () -> new BowlFoodItem(new Item.Properties().food(ModFoods.INCOMPLETE)));
 
-    public static final RegistryObject<Item> PUMPKIN_PIE_SLICE = ITEMS.register("pumpkin_pie_slice",
-            () -> new Item(new Item.Properties().food(ModFoods.INCOMPLETE)));
-
     public static final RegistryObject<Item> INCOMPLETE_STUFFED_POTATO = ITEMS.register("incomplete_stuffed_potato",
             () -> new Item(new Item.Properties().food(ModFoods.INCOMPLETE)));
 

@@ -15,7 +15,7 @@ public class ModCreativeModTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, DelightfulCreators.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> DELIGHTFULCREATORS_TAB = CREATIVE_MODE_TABS.register("delightfulcreators",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.PUMPKIN_PIE_SLICE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MECHANICAL_CUTTER.get()))
                     .title(Component.translatable("creativetab.delightfulcreators_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.INCOMPLETE_VEGETABLE_NOODLES.get());
@@ -48,7 +48,6 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.INCOMPLETE_ROASTED_MUTTON_CHOPS.get());
                         output.accept(ModItems.INCOMPLETE_STEAK_AND_POTATOES.get());
                         output.accept(ModItems.INCOMPLETE_STUFFED_POTATO.get());
-                        output.accept(ModItems.PUMPKIN_PIE_SLICE.get());
                         output.accept(ModItems.TOMATO_SAUCE_BUCKET.get());
                         output.accept(ModItems.HOT_COCOA_BUCKET.get());
                         output.accept(ModItems.MELON_JUICE_BUCKET.get());

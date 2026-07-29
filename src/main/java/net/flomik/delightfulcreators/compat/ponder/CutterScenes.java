@@ -13,13 +13,13 @@ import net.createmod.ponder.api.scene.Selection;
 
 import net.flomik.delightfulcreators.block.ModBlocks;
 import net.flomik.delightfulcreators.block.cutter.MechanicalCutterBlockEntity;
-import net.flomik.delightfulcreators.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 /**
  * Reuses the layout of Create's own "mechanical_press/pressing" schematic (belts, depot, shaft
