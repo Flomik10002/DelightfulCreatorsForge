@@ -20,4 +20,6 @@ Delightful Creators is an addon for Farmer's Delight and Create which adds new r
 
 ## Localization:
 • English (en_us) - Flomik<br>
-• Russian (ru_ru) - Flomik
+• Russian (ru_ru) - Flomik<br>
+• Chinese Simplified (zh_cn) - Flomik<br>
+• Spanish (es_mx) - [TheLegendofSaram](https://github.com/TheLegendofSaram)
