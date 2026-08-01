@@ -1,0 +1,17 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "farmersdelight:fish_stew"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "fluid": "delightfulcreators:fish_stew",
+      "amount": 333
+    }
+  ]
+}
