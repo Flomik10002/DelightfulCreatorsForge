@@ -73,6 +73,16 @@ public class BaseFluidType extends FluidType {
             }
 
             @Override
+            public int getTintColor(net.neoforged.neoforge.fluids.FluidStack stack) {
+                return tintColor;
+            }
+
+            @Override
+            public int getTintColor(net.minecraft.world.level.material.FluidState state, net.minecraft.world.level.BlockAndTintGetter level, net.minecraft.core.BlockPos pos) {
+                return tintColor;
+            }
+
+            @Override
             public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level,
                                                     int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
                 return fogColor;

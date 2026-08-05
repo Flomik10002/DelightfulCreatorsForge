@@ -21,6 +21,8 @@ build
 eclipse
 run
 run-data
+build_local.sh
+*.sh
 
 # Files from Forge MDK
 forge*changelog.txt
