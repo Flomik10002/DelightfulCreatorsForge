@@ -29,6 +29,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import java.util.List;
 import org.slf4j.Logger;
 
 @Mod(DelightfulCreators.MOD_ID)
@@ -79,44 +80,12 @@ public class DelightfulCreators {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_TOMATO_SAUCE.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_TOMATO_SAUCE.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_HOT_COCOA.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_HOT_COCOA.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_MELON_JUICE.get(), RenderType.translucent());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MELON_JUICE.get(), RenderType.translucent());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_APPLE_CIDER.get(), RenderType.translucent());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_APPLE_CIDER.get(), RenderType.translucent());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_BEETROOT_SOUP.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_BEETROOT_SOUP.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_CHICKEN_SOUP.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_CHICKEN_SOUP.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_NOODLE_SOUP.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_NOODLE_SOUP.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_PUMPKIN_SOUP.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_PUMPKIN_SOUP.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_VEGETABLE_SOUP.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_VEGETABLE_SOUP.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_FISH_STEW.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_FISH_STEW.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_BEEF_STEW.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_BEEF_STEW.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_RABBIT_STEW.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_RABBIT_STEW.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_MUSHROOM_STEW.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MUSHROOM_STEW.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_GLOW_BERRY_CUSTARD.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_GLOW_BERRY_CUSTARD.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_RATATOUILLE.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_RATATOUILLE.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_DOG_FOOD.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_DOG_FOOD.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_BAKED_COD_STEW.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_BAKED_COD_STEW.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_BONE_BROTH.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_BONE_BROTH.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_COOKED_RICE.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_COOKED_RICE.get(), RenderType.solid());
+                List.of(
+                        ModFluids.SOURCE_MELON_JUICE,
+                        ModFluids.FLOWING_MELON_JUICE,
+                        ModFluids.SOURCE_APPLE_CIDER,
+                        ModFluids.FLOWING_APPLE_CIDER
+                ).forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid.get(), RenderType.translucent()));
             });
             ModPartialModels.init();
             PonderIndex.addPlugin(new DelightfulCreatorsPonderPlugin());

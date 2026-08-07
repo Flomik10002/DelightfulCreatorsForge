@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "delightfulcreators:block/dog_food_still",
+    "still": "delightfulcreators:block/dog_food_still",
+    "flow": "delightfulcreators:block/dog_food_flow"
+  }
+}

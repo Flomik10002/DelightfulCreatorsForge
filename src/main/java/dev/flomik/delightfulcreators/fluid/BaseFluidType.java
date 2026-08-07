@@ -32,22 +32,6 @@ public class BaseFluidType extends FluidType {
         this.fogColor = fogColor;
     }
 
-    public ResourceLocation getStillTexture() {
-        return stillTexture;
-    }
-
-    public ResourceLocation getFlowingTexture() {
-        return flowingTexture;
-    }
-
-    public ResourceLocation getOverlayTexture() {
-        return overlayTexture;
-    }
-
-    public Vector3f getFogColor() {
-        return fogColor;
-    }
-
     @Override
     public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
         consumer.accept(new IClientFluidTypeExtensions() {
@@ -69,16 +53,6 @@ public class BaseFluidType extends FluidType {
 
             @Override
             public int getTintColor() {
-                return tintColor;
-            }
-
-            @Override
-            public int getTintColor(net.neoforged.neoforge.fluids.FluidStack stack) {
-                return tintColor;
-            }
-
-            @Override
-            public int getTintColor(net.minecraft.world.level.material.FluidState state, net.minecraft.world.level.BlockAndTintGetter level, net.minecraft.core.BlockPos pos) {
                 return tintColor;
             }
 
