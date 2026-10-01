@@ -6,10 +6,13 @@ import com.google.gson.JsonElement;
 
 import dev.flomik.delightfulcreators.recipe.CookingPotFallbackRecipes;
 import dev.flomik.delightfulcreators.recipe.SawBarkFallbackRecipes;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeManager;
 
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
@@ -23,12 +26,15 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 @Mixin(value = RecipeManager.class, remap = false)
 public class RecipeManagerMixin {
 
+    @Shadow @Final
+    private HolderLookup.Provider registries;
+
     @ModifyVariable(
             method = "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V",
             at = @At("HEAD"))
     private Map<ResourceLocation, JsonElement> delightfulcreators$injectFallbacks(
             Map<ResourceLocation, JsonElement> object) {
-        Map<ResourceLocation, JsonElement> withCookingFallbacks = CookingPotFallbackRecipes.withFallbacks(object);
+        Map<ResourceLocation, JsonElement> withCookingFallbacks = CookingPotFallbackRecipes.withFallbacks(object, registries);
         return SawBarkFallbackRecipes.withBarkBonus(withCookingFallbacks);
     }
 

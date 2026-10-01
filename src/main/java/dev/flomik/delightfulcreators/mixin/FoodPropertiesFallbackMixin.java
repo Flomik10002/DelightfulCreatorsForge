@@ -19,13 +19,9 @@ import org.spongepowered.asm.mixin.Overwrite;
  * effects, while it's only "in progress" (tagged with Create's SEQUENCED_ASSEMBLY data component).
  * This replaces IItemStackExtension#getFoodProperties (the single choke point every eat/hunger check
  * goes through - see LivingEntity#eat) and substitutes our low-value ModFoods.INCOMPLETE profile
- * whenever that component is present, regardless of which real item is underneath, otherwise falling
- * back to the exact same delegation the original default method did (Mixin's injectors don't support
- * interface targets, so this has to be a full @Overwrite rather than an @Inject).
- *
- * PORT RISK: whether stack.has(AllDataComponents.SEQUENCED_ASSEMBLY) is the correct accessor (versus
- * needing stack.get(...) with a null check, or a differently-named component) could not be verified
- * against the real Create 1.21.1 jar in this environment (no network access to Create's Maven repo).
+ * only when the underlying item is already food and the sequenced-assembly component is present.
+ * Non-food transitional items remain non-food. Mixin's injectors don't support interface targets,
+ * so this has to be a full @Overwrite rather than an @Inject.
  */
 @Mixin(value = IItemStackExtension.class, remap = false)
 public interface FoodPropertiesFallbackMixin {
@@ -33,10 +29,11 @@ public interface FoodPropertiesFallbackMixin {
     @Overwrite
     default FoodProperties getFoodProperties(LivingEntity entity) {
         ItemStack self = (ItemStack) (Object) this;
-        if (self.has(AllDataComponents.SEQUENCED_ASSEMBLY))
-            return ModFoods.INCOMPLETE;
-        return self.getItem()
+        FoodProperties original = self.getItem()
                 .getFoodProperties(self, entity);
+        return original != null && self.has(AllDataComponents.SEQUENCED_ASSEMBLY)
+                ? ModFoods.INCOMPLETE
+                : original;
     }
 
 }

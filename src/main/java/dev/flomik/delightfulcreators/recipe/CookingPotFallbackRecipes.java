@@ -8,12 +8,16 @@ import java.util.Set;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 import com.mojang.logging.LogUtils;
+import com.mojang.serialization.JsonOps;
 
 import dev.flomik.delightfulcreators.DelightfulCreators;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Recipe;
 
 import org.slf4j.Logger;
 
@@ -30,6 +34,8 @@ import org.slf4j.Logger;
  * into real Recipe objects - see RecipeManagerMixin. This means it works from plain JSON structure
  * only, except where it needs to consult the already-fully-registered Item registry (see
  * impliedContainer()) - item registration happens long before recipes are loaded, so that's safe.
+ * Every generated recipe is decoded once before injection, so recipes unsupported by Create or
+ * referring to missing registry entries are discarded instead of reaching RecipeManager.
  *
  * The generated Sequenced Assembly recipe's transitional item is a plain copy of the finished dish's
  * own ItemStack (same item id) rather than a bespoke "incomplete" item - there is no way to know in
@@ -78,16 +84,18 @@ public class CookingPotFallbackRecipes {
     private static final Set<String> SERVING_CONTAINERS = Set.of("minecraft:bowl", "minecraft:glass_bottle",
             "minecraft:bucket");
 
-    public static Map<ResourceLocation, JsonElement> withFallbacks(Map<ResourceLocation, JsonElement> original) {
+    public static Map<ResourceLocation, JsonElement> withFallbacks(Map<ResourceLocation, JsonElement> original,
+            HolderLookup.Provider registries) {
         try {
-            return generate(original);
+            return generate(original, registries);
         } catch (Exception e) {
             LOGGER.error("Failed to generate fallback cooking recipes, skipping this pass", e);
             return original;
         }
     }
 
-    private static Map<ResourceLocation, JsonElement> generate(Map<ResourceLocation, JsonElement> original) {
+    private static Map<ResourceLocation, JsonElement> generate(Map<ResourceLocation, JsonElement> original,
+            HolderLookup.Provider registries) {
         Set<String> handledResults = collectHandledResults(original);
         Map<String, FluidSource> itemFluids = collectItemFluids(original);
         Map<ResourceLocation, JsonElement> result = new HashMap<>(original);
@@ -127,6 +135,10 @@ public class CookingPotFallbackRecipes {
             JsonObject generatedRecipe = ingredients.size() == 2
                     ? buildSingleStep(ingredients.get(0), ingredients.get(1), resultOutput, itemFluids)
                     : buildSequencedAssembly(ingredients, resultOutput, itemFluids);
+            if (!isValid(generatedRecipe, registries)) {
+                LOGGER.debug("Skipping invalid generated fallback {} for {}", fallbackId, entry.getKey());
+                continue;
+            }
             result.put(fallbackId, generatedRecipe);
             generated++;
             LOGGER.debug("Generated fallback recipe {} for {}", fallbackId, entry.getKey());
@@ -136,6 +148,16 @@ public class CookingPotFallbackRecipes {
             LOGGER.info("Generated {} fallback cooking-pot recipe(s)", generated);
 
         return result;
+    }
+
+    private static boolean isValid(JsonObject recipe, HolderLookup.Provider registries) {
+        try {
+            Recipe.CODEC.parse(registries.createSerializationContext(JsonOps.INSTANCE), recipe)
+                    .getOrThrow(JsonParseException::new);
+            return true;
+        } catch (RuntimeException exception) {
+            return false;
+        }
     }
 
     // Farmer's Delight 1.21.1's own "result"/"container" fields already use the same vanilla
@@ -340,9 +362,8 @@ public class CookingPotFallbackRecipes {
 
         JsonObject step = new JsonObject();
         JsonArray stepIngredients = new JsonArray();
-        // Overwritten by Create's own SequencedRecipe parsing regardless of what's here (it always
-        // rebinds slot 0 to the transitional item / starting ingredient) - kept explicit to match
-        // the shape of our own hand-authored recipes.
+        // Create rebinds slot 0 to the transitional item / starting ingredient with List#set(), so
+        // this item slot must exist before the sequenced recipe is parsed.
         JsonObject transitionalAsIngredient = new JsonObject();
         transitionalAsIngredient.addProperty("item", transitionalItem.get("id").getAsString());
         stepIngredients.add(transitionalAsIngredient);
