@@ -29,6 +29,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import java.util.List;
 import org.slf4j.Logger;
 
 @Mod(DelightfulCreators.MOD_ID)
@@ -79,8 +80,12 @@ public class DelightfulCreators {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_TOMATO_SAUCE.get(), RenderType.solid());
-                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_TOMATO_SAUCE.get(), RenderType.solid());
+                List.of(
+                        ModFluids.SOURCE_MELON_JUICE,
+                        ModFluids.FLOWING_MELON_JUICE,
+                        ModFluids.SOURCE_APPLE_CIDER,
+                        ModFluids.FLOWING_APPLE_CIDER
+                ).forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid.get(), RenderType.translucent()));
             });
             ModPartialModels.init();
             PonderIndex.addPlugin(new DelightfulCreatorsPonderPlugin());
